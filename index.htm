@@ -37,19 +37,19 @@
   <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
   <script src="/_sdk/element_sdk.js" type="text/javascript"></script>
  </head>
- <body class="min-h-full" style="background: linear-gradient(to bottom, #f9fafb, #f3f4f6, #e5e7eb);"><!-- Header con immagine Madrid -->
-  <div class="relative h-64 md:h-80 mb-6 overflow-hidden"><img src="https://www.voyagetips.com/wp-content/uploads/2017/06/Circulo-de-Bellas-Artes.jpg" alt="Vista di Madrid al tramonto" class="w-full h-full object-cover" onerror="this.src=''; this.alt='Immagine non disponibile'; this.style.display='none';"> <!-- Overlay scuro -->
-   <div class="absolute inset-0 bg-black/40"></div><!-- Contenuto header -->
-   <div class="absolute inset-0 flex flex-col justify-center items-center text-white px-4">
-    <h1 class="text-4xl md:text-6xl font-light mb-3 text-center tracking-wider" style="font-weight: 300;">Madrid</h1>
-    <div class="text-center mb-2">
-     <p class="text-lg md:text-2xl font-light opacity-90 mb-1">30 Dicembre - 1 Gennaio</p>
-     <p class="text-sm md:text-lg font-light opacity-80">15 Partecipanti</p>
+ <body class="min-h-full" style="background: linear-gradient(to bottom, #f9fafb, #f3f4f6, #e5e7eb);"><!-- Header con immagine -->
+  <div class="w-full mb-4">
+   <div class="relative h-48 md:h-64 overflow-hidden"><img src="https://c.pxhere.com/photos/ee/a5/sky_palace_glass_architecture_ceiling_museum_ceilings_real_estate-1117682.jpg!d" alt="Madrid Capodanno" class="w-full h-full object-cover" onerror="this.src=''; this.alt='Immagine non disponibile'; this.style.display='none';">
+    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-black/20 flex items-end justify-center pb-6">
+     <div class="text-center text-white">
+      <h1 class="text-xl md:text-2xl font-bold mb-1 uppercase tracking-wide">CAPODANNO A MADRID 🎉</h1>
+      <p class="text-xs opacity-90 uppercase tracking-wide">30 DICEMBRE - 1 GENNAIO 2025</p>
+     </div>
     </div>
    </div>
-  </div><!-- Countdown sotto l'header -->
-  <div class="container mx-auto px-2 py-4">
-   <div class="max-w-md mx-auto">
+  </div>
+  <div class="container mx-auto px-4 py-4"><!-- Countdown -->
+   <div class="max-w-md mx-auto mb-6">
     <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-4">
      <p class="text-sm text-center text-gray-700 mb-3 font-medium">Partenza tra:</p>
      <div class="flex justify-center space-x-3">
@@ -87,144 +87,189 @@
       </div>
      </div>
     </div>
-   </div>
-  </div>
-  <div class="container mx-auto px-2 py-2"><!-- Main Grid -->
-   <div class="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-2 max-w-6xl mx-auto mb-4"><!-- Itinerario -->
-    <div class="card-minimal rounded-lg p-2 cursor-pointer" onclick="openSection('itinerario')">
-     <div class="text-center">
-      <div class="text-lg mb-1">
+   </div><!-- Main Grid -->
+   <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 max-w-4xl mx-auto mb-6"><!-- Itinerario -->
+    <div class="card-minimal rounded-lg p-4 cursor-pointer" onclick="openSection('itinerario')">
+     <div class="text-center flex flex-col items-center justify-center h-full">
+      <div class="text-3xl mb-2">
        🗺️
       </div>
-      <h3 class="text-xs font-medium text-gray-700">ITINERARIO</h3>
+      <h3 class="text-sm font-medium text-gray-700">ITINERARIO</h3>
      </div>
     </div><!-- Cosa Portare -->
-    <div class="card-minimal rounded-lg p-2 cursor-pointer" onclick="openSection('cosa-portare')">
-     <div class="text-center">
-      <div class="text-lg mb-1">
+    <div class="card-minimal rounded-lg p-4 cursor-pointer" onclick="openSection('cosa-portare')">
+     <div class="text-center flex flex-col items-center justify-center h-full">
+      <div class="text-3xl mb-2">
        🎒
       </div>
-      <h3 class="text-xs font-medium text-gray-700">COSA PORTARE</h3>
+      <h3 class="text-sm font-medium text-gray-700">COSA PORTARE</h3>
      </div>
     </div><!-- Spese -->
-    <div class="card-minimal rounded-lg p-2 cursor-pointer" onclick="openSection('spese')">
-     <div class="text-center">
-      <div class="text-lg mb-1">
+    <div class="card-minimal rounded-lg p-4 cursor-pointer" onclick="openSection('spese')">
+     <div class="text-center flex flex-col items-center justify-center h-full">
+      <div class="text-3xl mb-2">
        💰
       </div>
-      <h3 class="text-xs font-medium text-gray-700">SPESE</h3>
+      <h3 class="text-sm font-medium text-gray-700">SPESE</h3>
      </div>
     </div><!-- Foto -->
-    <div class="card-minimal rounded-lg p-2 cursor-pointer" onclick="openSection('foto')">
-     <div class="text-center">
-      <div class="text-lg mb-1">
+    <div class="card-minimal rounded-lg p-4 cursor-pointer" onclick="openSection('foto')">
+     <div class="text-center flex flex-col items-center justify-center h-full">
+      <div class="text-3xl mb-2">
        📸
       </div>
-      <h3 class="text-xs font-medium text-gray-700">FOTO</h3>
+      <h3 class="text-sm font-medium text-gray-700">FOTO</h3>
      </div>
     </div><!-- Playlist -->
-    <div class="card-minimal rounded-lg p-2 cursor-pointer" onclick="openSection('playlist')">
-     <div class="text-center">
-      <div class="text-lg mb-1">
+    <div class="card-minimal rounded-lg p-4 cursor-pointer" onclick="openSection('playlist')">
+     <div class="text-center flex flex-col items-center justify-center h-full">
+      <div class="text-3xl mb-2">
        🎵
       </div>
-      <h3 class="text-xs font-medium text-gray-700">PLAYLIST</h3>
+      <h3 class="text-sm font-medium text-gray-700">PLAYLIST</h3>
      </div>
-    </div><!-- Bucket List -->
-    <div class="card-minimal rounded-lg p-2 cursor-pointer" onclick="openSection('checklist')">
-     <div class="text-center">
-      <div class="text-lg mb-1">
-       ✅
+    </div><!-- Guida Madrid -->
+    <div class="card-minimal rounded-lg p-4 cursor-pointer" onclick="openSection('guida')">
+     <div class="text-center flex flex-col items-center justify-center h-full">
+      <div class="text-3xl mb-2">
+       📖
       </div>
-      <h3 class="text-xs font-medium text-gray-700">BUCKET LIST</h3>
-     </div>
-    </div><!-- Quiz Atene -->
-    <div class="card-minimal rounded-lg p-2 cursor-pointer" onclick="openSection('quiz')">
-     <div class="text-center">
-      <div class="text-lg mb-1">
-       🧠
-      </div>
-      <h3 class="text-xs font-medium text-gray-700">QUIZ</h3>
-     </div>
-    </div><!-- Meteo -->
-    <div class="card-minimal rounded-lg p-2 cursor-pointer" onclick="openSection('meteo')">
-     <div class="text-center">
-      <div class="text-lg mb-1">
-       🌤️
-      </div>
-      <h3 class="text-xs font-medium text-gray-700">METEO</h3>
+      <h3 class="text-sm font-medium text-gray-700">GUIDA MADRID</h3>
      </div>
     </div><!-- Info Utili -->
-    <div class="card-minimal rounded-lg p-2 cursor-pointer" onclick="openSection('info-utili')">
-     <div class="text-center">
-      <div class="text-lg mb-1">
+    <div class="card-minimal rounded-lg p-4 cursor-pointer" onclick="openSection('info-utili')">
+     <div class="text-center flex flex-col items-center justify-center h-full">
+      <div class="text-3xl mb-2">
        📋
       </div>
-      <h3 class="text-xs font-medium text-gray-700">INFO UTILI</h3>
+      <h3 class="text-sm font-medium text-gray-700">INFO UTILI</h3>
      </div>
     </div><!-- FAQ -->
-    <div class="card-minimal rounded-lg p-2 cursor-pointer" onclick="openSection('faq')">
-     <div class="text-center">
-      <div class="text-lg mb-1">
+    <div class="card-minimal rounded-lg p-4 cursor-pointer" onclick="openSection('faq')">
+     <div class="text-center flex flex-col items-center justify-center h-full">
+      <div class="text-3xl mb-2">
        ❓
       </div>
-      <h3 class="text-xs font-medium text-gray-700">FAQ</h3>
+      <h3 class="text-sm font-medium text-gray-700">FAQ</h3>
      </div>
     </div><!-- Emergency Kit -->
-    <div class="card-minimal rounded-lg p-2 cursor-pointer" onclick="openSection('emergency')">
-     <div class="text-center">
-      <div class="text-lg mb-1">
+    <div class="card-minimal rounded-lg p-4 cursor-pointer" onclick="openSection('emergency')">
+     <div class="text-center flex flex-col items-center justify-center h-full">
+      <div class="text-3xl mb-2">
        🚨
       </div>
-      <h3 class="text-xs font-medium text-gray-700">EMERGENCY KIT</h3>
+      <h3 class="text-sm font-medium text-gray-700">EMERGENCY KIT</h3>
      </div>
-    </div><!-- WeRoad -->
-    <div class="card-minimal rounded-lg p-2 cursor-pointer" onclick="openSection('weroad')">
-     <div class="text-center">
-      <div class="text-lg mb-1">
+    </div><!-- Info WeRoad -->
+    <div class="card-minimal rounded-lg p-4 cursor-pointer" onclick="openSection('weroad')">
+     <div class="text-center flex flex-col items-center justify-center h-full">
+      <div class="text-3xl mb-2">
        🌍
       </div>
-      <h3 class="text-xs font-medium text-gray-700">WEROAD</h3>
+      <h3 class="text-sm font-medium text-gray-700">INFO WEROAD</h3>
      </div>
     </div>
-   </div><!-- Mappa Google Maps -->
-   <div class="mb-4">
+   </div><!-- Meteo -->
+   <div class="mb-6">
     <div class="card-minimal rounded-lg overflow-hidden max-w-4xl mx-auto">
      <div class="bg-gray-50 p-3 border-b border-gray-200">
       <div class="flex items-center justify-between">
-       <div class="flex items-center"><span class="text-lg mr-2">🗺️</span>
-        <h3 class="text-sm font-medium text-gray-700">Mappa Madrid - Punti di Interesse</h3>
+       <div class="flex items-center"><span class="text-lg mr-2">🌤️</span>
+        <h3 class="text-sm font-medium text-gray-700">Meteo Weekend Madrid</h3>
+       </div><a href="https://weather.com/weather/tenday/l/Madrid+Spain" target="_blank" rel="noopener noreferrer" class="text-xs bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700 transition-colors"> Previsioni Dettagliate </a>
+      </div>
+     </div>
+     <div class="p-4">
+      <div id="weather-loading" class="text-center py-8">
+       <div class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-gray-900"></div>
+       <p class="text-sm text-gray-600 mt-2">Caricamento previsioni meteo...</p>
+      </div>
+      <div id="weather-content" class="hidden">
+       <div class="grid grid-cols-3 gap-3 mb-4" id="weather-days"></div>
+       <div class="bg-blue-50 p-3 rounded-lg">
+        <h4 class="font-medium text-gray-800 mb-2 text-sm">🧥 Consigli Abbigliamento</h4>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-xs text-gray-700" id="weather-advice">
+         <div>
+          ❄️ <strong>Giorno:</strong> Cappotto pesante, maglione (5-10°C)
+         </div>
+         <div>
+          🌙 <strong>Sera:</strong> Cappotto + sciarpa + guanti (0-5°C)
+         </div>
+         <div>
+          👟 <strong>Scarpe:</strong> Comode e chiuse, NO sandali!
+         </div>
+        </div>
+       </div>
+      </div>
+      <div id="weather-error" class="hidden text-center py-4">
+       <p class="text-sm text-gray-600 mb-3">⚠️ Impossibile caricare i dati meteo</p>
+       <div class="grid grid-cols-3 gap-3 mb-4">
+        <div class="bg-white p-3 rounded-lg text-center border border-gray-200">
+         <p class="text-xs text-gray-500 mb-1">Lun 30 Dic</p>
+         <div class="text-3xl mb-1">
+          🌤️
+         </div>
+         <p class="text-lg font-medium text-gray-800">10°C</p>
+         <p class="text-xs text-gray-500">Soleggiato</p>
+        </div>
+        <div class="bg-white p-3 rounded-lg text-center border border-gray-200">
+         <p class="text-xs text-gray-500 mb-1">Mar 31 Dic</p>
+         <div class="text-3xl mb-1">
+          ❄️
+         </div>
+         <p class="text-lg font-medium text-gray-800">8°C</p>
+         <p class="text-xs text-gray-500">Freddo</p>
+        </div>
+        <div class="bg-white p-3 rounded-lg text-center border border-gray-200">
+         <p class="text-xs text-gray-500 mb-1">Mer 1 Gen</p>
+         <div class="text-3xl mb-1">
+          ☀️
+         </div>
+         <p class="text-lg font-medium text-gray-800">9°C</p>
+         <p class="text-xs text-gray-500">Sereno</p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div><!-- Mappa Google Maps -->
+   <div class="mb-6">
+    <div class="card-minimal rounded-lg overflow-hidden max-w-4xl mx-auto">
+     <div class="bg-gray-50 p-3 border-b border-gray-200">
+      <div class="flex items-center justify-between">
+       <div class="flex items-center"><span class="text-lg mr-2">🗺����</span>
+        <h3 class="text-sm font-medium text-gray-700">Mappa Madrid</h3>
        </div><a href="https://www.google.com/maps/place/Madrid,+Spagna/@40.4167047,-3.7035825,12z" target="_blank" rel="noopener noreferrer" class="text-xs bg-gray-700 text-white px-3 py-1 rounded hover:bg-gray-800 transition-colors"> Apri in Google Maps </a>
       </div>
      </div>
-     <div class="h-64 md:h-80"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.15830869428!2d-3.819315484407011!3d40.43765779473284!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd422997800a3c81%3A0xc436dec1618c2269!2sMadrid%2C%20Spagna!5e0!3m2!1sit!2sit!4v1234567890123!5m2!1sit!2sit" width="100%" height="100%" style="border:0;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"> </iframe>
+     <div class="h-64 md:h-80"><iframe src="https://www.google.com/maps/d/u/0/embed?mid=1Qc0qsiDEZ_x8tjgkAvikBMiO-A1NOss&amp;ehbc=2E312F" width="100%" height="100%" style="border:0;" allowfullscreen loading="lazy"> </iframe>
      </div>
     </div>
    </div><!-- Link Utili -->
-   <div class="mb-4">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-2 max-w-4xl mx-auto"><a href="https://www.esmadrid.com" target="_blank" rel="noopener noreferrer" class="card-minimal rounded-lg p-3">
-      <div class="flex items-center"><span class="text-lg mr-2">🇪🇸</span>
+   <div class="mb-6">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-3 max-w-4xl mx-auto"><a href="https://www.esmadrid.com" target="_blank" rel="noopener noreferrer" class="card-minimal rounded-lg p-4">
+      <div class="flex items-center"><span class="text-2xl mr-3">🏛️</span>
        <div>
-        <h4 class="font-medium text-gray-700 text-xs">ESMADRID</h4>
+        <h4 class="font-medium text-gray-700 text-sm">ESMADRID</h4>
         <p class="text-xs text-gray-500">Turismo ufficiale</p>
        </div>
-      </div></a> <a href="https://www.weroad.it" target="_blank" rel="noopener noreferrer" class="card-minimal rounded-lg p-3">
-      <div class="flex items-center"><span class="text-lg mr-2">🌍</span>
+      </div></a> <a href="https://www.weroad.it/viaggi/madrid-weekend-weroadx" target="_blank" rel="noopener noreferrer" class="card-minimal rounded-lg p-4">
+      <div class="flex items-center"><span class="text-2xl mr-3">🌍</span>
        <div>
-        <h4 class="font-medium text-gray-700 text-xs">WEROAD</h4>
+        <h4 class="font-medium text-gray-700 text-sm">WEROAD</h4>
         <p class="text-xs text-gray-500">Il nostro tour</p>
        </div>
-      </div></a> <a href="https://consmadrid.esteri.it" target="_blank" rel="noopener noreferrer" class="card-minimal rounded-lg p-3">
-      <div class="flex items-center"><span class="text-lg mr-2">🏛️</span>
+      </div></a> <a href="https://consmadrid.esteri.it" target="_blank" rel="noopener noreferrer" class="card-minimal rounded-lg p-4">
+      <div class="flex items-center"><span class="text-2xl mr-3">🇮🇹</span>
        <div>
-        <h4 class="font-medium text-gray-700 text-xs">CONSOLATO</h4>
+        <h4 class="font-medium text-gray-700 text-sm">CONSOLATO</h4>
         <p class="text-xs text-gray-500">Consolato Italia</p>
        </div>
       </div></a>
     </div>
    </div>
   </div><!-- Modal per le sezioni -->
-  <div id="modal" class="fixed inset-0 bg-black/50 hidden items-center justify-center z-50 p-2">
+  <div id="modal" class="fixed inset-0 bg-black/50 hidden items-center justify-center z-50 p-4">
    <div class="card-minimal rounded-lg max-w-2xl w-full max-h-[90%] overflow-hidden">
     <div class="p-4">
      <div class="flex justify-between items-center mb-4">
@@ -236,9 +281,59 @@
    </div>
   </div>
   <script>
+        // Weather API
+        async function loadWeather() {
+            try {
+                const response = await fetch('https://api.open-meteo.com/v1/forecast?latitude=40.4168&longitude=-3.7038&daily=temperature_2m_max,temperature_2m_min,weathercode&timezone=Europe/Madrid&start_date=2024-12-30&end_date=2025-01-01');
+                const data = await response.json();
+                
+                const weatherIcons = {
+                    0: '☀️', 1: '🌤️', 2: '���', 3: '☁️',
+                    45: '🌫️', 48: '🌫️',
+                    51: '🌦️', 53: '🌦️', 55: '🌧️',
+                    61: '🌧️', 63: '🌧️', 65: '🌧️',
+                    71: '🌨️', 73: '🌨️', 75: '🌨️',
+                    80: '🌦️', 81: '🌧️', 82: '⛈️',
+                    95: '⛈️', 96: '⛈️', 99: '⛈️'
+                };
+                
+                const weatherDesc = {
+                    0: 'Sereno', 1: 'Soleggiato', 2: 'Parzialmente nuvoloso', 3: 'Nuvoloso',
+                    45: 'Nebbioso', 48: 'Nebbioso',
+                    51: 'Pioggia leggera', 53: 'Pioggia moderata', 55: 'Pioggia intensa',
+                    61: 'Pioggia leggera', 63: 'Pioggia', 65: 'Pioggia forte',
+                    71: 'Neve leggera', 73: 'Neve', 75: 'Neve intensa',
+                    80: 'Rovesci', 81: 'Rovesci forti', 82: 'Temporali',
+                    95: 'Temporale', 96: 'Temporale forte', 99: 'Temporale intenso'
+                };
+                
+                const dates = ['Lun 30 Dic', 'Mar 31 Dic', 'Mer 1 Gen'];
+                const daysHtml = data.daily.weathercode.map((code, i) => {
+                    const maxTemp = Math.round(data.daily.temperature_2m_max[i]);
+                    const minTemp = Math.round(data.daily.temperature_2m_min[i]);
+                    const avgTemp = Math.round((maxTemp + minTemp) / 2);
+                    return `
+                        <div class="bg-white p-3 rounded-lg text-center border border-gray-200">
+                            <p class="text-xs text-gray-500 mb-1">${dates[i]}</p>
+                            <div class="text-3xl mb-1">${weatherIcons[code] || '🌤️'}</div>
+                            <p class="text-lg font-medium text-gray-800">${avgTemp}°C</p>
+                            <p class="text-xs text-gray-500">${weatherDesc[code] || 'Variabile'}</p>
+                        </div>
+                    `;
+                }).join('');
+                
+                document.getElementById('weather-days').innerHTML = daysHtml;
+                document.getElementById('weather-loading').classList.add('hidden');
+                document.getElementById('weather-content').classList.remove('hidden');
+            } catch (error) {
+                console.error('Errore caricamento meteo:', error);
+                document.getElementById('weather-loading').classList.add('hidden');
+                document.getElementById('weather-error').classList.remove('hidden');
+            }
+        }
+
         // Countdown Timer
         function updateCountdown() {
-            // Data target: 30 dicembre 2024, ore 15:00 (fuso orario Madrid)
             const targetDate = new Date('2024-12-30T15:00:00+01:00').getTime();
             const now = new Date().getTime();
             const distance = targetDate - now;
@@ -261,1192 +356,58 @@
             }
         }
 
-        // Aggiorna countdown ogni secondo
         updateCountdown();
         setInterval(updateCountdown, 1000);
+
+        // Carica meteo all'avvio
+        loadWeather();
 
         const sections = {
             'itinerario': {
                 title: '🗺️ Itinerario',
                 content: `
                     <div class="space-y-3">
-                        <div class="bg-gradient-to-r from-purple-50 to-pink-50 p-3 rounded-lg border-l-4 border-purple-400">
-                            <h4 class="font-medium text-gray-800 mb-2">🌙 Day 1 - Lunedì 30 Dicembre</h4>
-                            <ul class="text-sm space-y-1 text-gray-700">
-                                <li>• Welcome Meeting in Hotel</li>
-                                <li>• 🚶‍♀️ Tour a piedi del centro storico</li>
-                                <li>• 🏛️ Plaza Mayor e Puerta del Sol</li>
-                                <li>• 🍷 Aperitivo e tapas tradizionali</li>
-                                <li>• 🌃 Vita notturna madrilena</li>
-                            </ul>
-                        </div>
-                        <div class="bg-gradient-to-r from-blue-50 to-cyan-50 p-3 rounded-lg border-l-4 border-blue-400">
-                            <h4 class="font-medium text-gray-800 mb-2">🎨 Day 2 - Martedì 31 Dicembre - CAPODANNO!</h4>
-                            <ul class="text-sm space-y-1 text-gray-700">
-                                <li>• 🖼️ Museo del Prado o Reina Sofia</li>
-                                <li>• ������ Palazzo Reale</li>
-                                <li>• 🛍️ Shopping e relax</li>
-                                <li>• 🍇 Preparazione per la mezzanotte (12 chicchi d'uva!)</li>
-                                <li>• 🎉 CAPODANNO in Puerta del Sol!</li>
-                                <li>• 🥂 Festa fino all'alba</li>
-                            </ul>
-                        </div>
-                        <div class="bg-gradient-to-r from-orange-50 to-yellow-50 p-3 rounded-lg border-l-4 border-orange-400">
-                            <h4 class="font-medium text-gray-800 mb-2">☀️ Day 3 - Mercoledì 1 Gennaio - Capodanno</h4>
-                            <p class="text-sm text-gray-700 mb-2 italic">Buon Anno! Iniziamo il 2025 con calma... o forse no! 🎊</p>
-                            <p class="text-sm text-gray-700 mb-2 font-medium">Attività proposte (a seconda di come ci sentiamo!):</p>
-                            <ul class="text-sm space-y-1 text-gray-700">
-                                <li>• 😴 Recupero energie con brunch rilassante</li>
-                                <li>• 🌳 Passeggiata nel Parco del Retiro</li>
-                                <li>• 🛍️ Gran Via e shopping</li>
-                                <li>• ☕ Chocolate con churros da San Ginés</li>
-                                <li>• 🎭 Quartiere La Latina o Malasaña</li>
-                                <li>• 🍽️ Ultima cena tutti insieme</li>
-                            </ul>
-                        </div>
-                    </div>
-                `
-            },
-            'cosa-portare': {
-                title: '🎒 Cosa Portare',
-                content: `
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-                        <div class="bg-gray-50 p-3 rounded-lg">
-                            <h4 class="font-medium text-gray-800 mb-2">📋 Documenti Essenziali</h4>
-                            <ul class="text-sm space-y-1 text-gray-600">
-                                <li>�� Carta d'identità valida per l'espatrio o Passaporto</li>
-                                <li>• Tessera sanitaria europea</li>
-                                <li>• Biglietti aerei (stampa + digitale)</li>
-                                <li>• Conferme prenotazioni</li>
-                                <li>• Fotocopia documenti (separata dagli originali)</li>
-                            </ul>
-                        </div>
-                        <div class="bg-gray-50 p-3 rounded-lg">
-                            <h4 class="font-medium text-gray-800 mb-2">👗 Abbigliamento Dicembre/Gennaio</h4>
-                            <ul class="text-sm space-y-1 text-gray-600">
-                                <li>• Scarpe comode da camminata (molto importante!)</li>
-                                <li>• Cappotto o giacca pesante (5-10°C di giorno)</li>
-                                <li>• Maglioni e felpe calde</li>
-                                <li>• Jeans o pantaloni lunghi</li>
-                                <li>• Sciarpa, cappello e guanti</li>
-                                <li>• 🎉 OUTFIT DA CAPODANNO elegante e festoso!</li>
-                                <li>• Scarpe comode ma eleganti per la festa</li>
-                            </ul>
-                        </div>
-                        <div class="bg-gray-50 p-3 rounded-lg">
-                            <h4 class="font-medium text-gray-800 mb-2">📱 Tecnologia & Elettronica</h4>
-                            <ul class="text-sm space-y-1 text-gray-600">
-                                <li>• Smartphone + caricabatterie</li>
-                                <li>• Power bank portatile (fondamentale per capodanno!)</li>
-                                <li>• Fotocamera/GoPro per i festeggiamenti</li>
-                                <li>• Cuffie/auricolari</li>
-                                <li>• Adattatore universale (prese tipo C/F)</li>
-                            </ul>
-                        </div>
-                        <div class="bg-gray-50 p-3 rounded-lg">
-                            <h4 class="font-medium text-gray-800 mb-2">🧴 Cura Personale & Salute</h4>
-                            <ul class="text-sm space-y-1 text-gray-600">
-                                <li>• Medicinali personali + ricette</li>
-                                <li>• Crema idratante (aria secca)</li>
-                                <li>• Prodotti igiene personale</li>
-                                <li>• Salviette disinfettanti</li>
-                                <li>• Aspirina per il post-capodanno 😅</li>
-                            </ul>
-                        </div>
-                        <div class="bg-gray-50 p-3 rounded-lg">
-                            <h4 class="font-medium text-gray-800 mb-2">💰 Denaro & Pagamenti</h4>
-                            <ul class="text-sm space-y-1 text-gray-600">
-                                <li>• 150€ in contanti per cassa comune</li>
-                                <li>• Carta di credito/debito principale</li>
-                                <li>• Carta di backup</li>
-                                <li>• Contanti extra (capodanno costa!)</li>
-                                <li>• Portafoglio da viaggio sicuro</li>
-                            </ul>
-                        </div>
-                        <div class="bg-red-50 p-3 rounded-lg border-2 border-red-300">
-                            <h4 class="font-medium text-red-800 mb-2">🎊 ESSENZIALI CAPODANNO</h4>
-                            <ul class="text-sm space-y-1 text-red-700">
-                                <li>• 🍇 12 chicchi d'uva (tradizione spagnola!)</li>
-                                <li>• 🎉 Coriandoli e festoni</li>
-                                <li>• 📸 Spazio nella memoria del telefono</li>
-                                <li>• 😄 Buon umore e spirito festoso!</li>
-                            </ul>
-                        </div>
-                    </div>
-                `
-            },
-
-            'spese': {
-                title: '💰 Cassa Comune',
-                content: `
-                    <div class="space-y-3">
                         <div class="bg-blue-50 border-l-4 border-blue-400 p-3 rounded-lg">
-                            <h4 class="font-medium text-gray-800 mb-2">💵 Importo: 150€ per persona</h4>
-                            <p class="text-sm text-gray-700 mb-2">La cassa comune è un piccolo tesoro che mettiamo insieme per coprire quelle attività e servizi che non sono inclusi nel pacchetto standard del viaggio. 🏝️</p>
-                            <p class="text-sm text-gray-700">Ogni partecipante deve contribuire con la sua parte al coordinatore del viaggio all'inizio del tour, durante il primo incontro di benvenuto, in moneta locale. 💵</p>
-                        </div>
-                        
-                        <div class="bg-gray-50 p-3 rounded-lg">
-                            <p class="text-sm text-gray-700 mb-3">Per questo tour, l'importo previsto per la cassa comune è di <strong>150 euro</strong>. Ma attenzione! Questa cifra potrebbe variare, a seconda delle attività che il gruppo deciderà di fare. La cassa comune serve a togliervi dal pensiero di pagare ogni giorno per ogni cosa. Il coordinatore se ne occupa, così vi rilassate e godete l'avventura! 😎</p>
+                            <h4 class="font-medium text-gray-800 mb-2">📅 Programma Madrid Capodanno 2025</h4>
+                            <p class="text-sm text-gray-700">Tre giorni indimenticabili nella capitale spagnola! 🎉</p>
                         </div>
 
-                        <div class="bg-green-50 p-3 rounded-lg">
-                            <h4 class="font-medium text-gray-800 mb-2">✅ Cosa INCLUDE la cassa comune:</h4>
-                            <ul class="text-sm space-y-1 text-gray-600">
-                                <li>🌍 Attività extra scelte dal gruppo (biglietti per musei, escursioni, passeggiate turistiche)</li>
-                                <li>🚗 Trasporti locali</li>
-                                <li>👏 Mance generali</li>
-                                <li>😉 La quota del coordinatore</li>
-                            </ul>
-                        </div>
-
-                        <div class="bg-red-50 p-3 rounded-lg">
-                            <h4 class="font-medium text-gray-800 mb-2">❌ Cosa NON è incluso nella cassa comune:</h4>
-                            <ul class="text-sm space-y-1 text-gray-600">
-                                <li>🍕🍜 Cibo o pasti, a meno che non si tratti di un menù fisso</li>
-                                <li>👥 Quando il gruppo si divide in sottogruppi per attività diverse</li>
-                            </ul>
-                        </div>
-
-                        <div class="bg-purple-50 p-3 rounded-lg">
-                            <h4 class="font-medium text-gray-800 mb-2">🤍 Cosa è già incluso nel tuo pacchetto WeRoad</h4>
-                            <ul class="text-sm space-y-1 text-gray-600">
-                                <li>🏨 Hotel con colazione</li>
-                                <li>🚶‍♀️ Tour guidato del centro storico</li>
-                                <li>🎉 Accesso ai festeggiamenti di Capodanno</li>
-                                <li>🍷 Aperitivo di benvenuto</li>
-                            </ul>
-                        </div>
-
-                        <div class="bg-gray-50 p-3 rounded-lg text-center">
-                            <p class="text-sm text-gray-700 mb-3">Il coordinatore terrà traccia di tutte le spese fatte con la cassa comune e vi darà modo di consultare il totale quando vorrete. :)</p>
-                            <a href="https://tricount.com/tGWkjvwtmFILfOlzcv" target="_blank" rel="noopener noreferrer" class="inline-block bg-gray-700 text-white px-4 py-2 rounded-lg hover:bg-gray-800 transition-colors text-sm">
-                                Gestisci con Tricount
-                            </a>
-                        </div>
-                    </div>
-                `
-            },
-            'foto': {
-                title: '��� Album Foto Condiviso',
-                content: `
-                    <div class="space-y-3">
-                        <div class="bg-gray-50 p-3 rounded-lg text-center">
-                            <h4 class="font-medium text-gray-800 mb-2">PhotoCircle</h4>
-                            <p class="text-sm text-gray-600 mb-3">Condividi tutte le foto del Capodanno a Madrid!</p>
-                            <a href="https://join.photocircleapp.com/74700VZJKR" target="_blank" rel="noopener noreferrer" class="inline-block bg-gray-700 text-white px-4 py-2 rounded-lg hover:bg-gray-800 transition-colors text-sm">
-                                Apri Album
-                            </a>
-                        </div>
-                        <div class="bg-gray-50 p-3 rounded-lg">
-                            <h4 class="font-medium text-gray-800 mb-2">Idee Foto</h4>
-                            <ul class="text-sm space-y-1 text-gray-600">
-                                <li>📸 Foto di gruppo in Puerta del Sol</li>
-                                <li>🎉 Mezzanotte e i 12 chicchi d'uva</li>
-                                <li>🏰 Palazzo Reale</li>
-                                <li>🍷 Tapas e sangria</li>
-                                <li>🎊 Festeggiamenti di strada</li>
-                                <li>🌃 Madrid by night illuminata</li>
-                            </ul>
-                        </div>
-                    </div>
-                `
-            },
-            'playlist': {
-                title: '🎵 Playlist Condivisa',
-                content: `
-                    <div class="space-y-3">
-                        <div class="bg-gray-50 p-3 rounded-lg">
-                            <h4 class="font-medium text-gray-800 mb-2">🎶 Musica Spagnola</h4>
-                            <div class="space-y-2">
-                                <div class="bg-white border border-gray-200 rounded-lg p-3 hover:shadow-md hover:border-gray-300 transition-all">
-                                    <div class="flex items-center justify-between">
-                                        <div class="flex items-center">
-                                            <span class="text-lg mr-3">🇪🇸</span>
-                                            <div>
-                                                <h5 class="font-medium text-gray-700 text-sm">Spanish Hits</h5>
-                                                <p class="text-xs text-gray-500">Le migliori hit spagnole</p>
-                                            </div>
-                                        </div>
-                                        <a href="https://open.spotify.com/playlist/37i9dQZF1DX8cH7oPLPu5p" target="_blank" rel="noopener noreferrer" class="bg-green-600 text-white px-3 py-1 rounded text-xs hover:bg-green-700 transition-colors">
-                                            Spotify
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="bg-white border border-gray-200 rounded-lg p-3 hover:shadow-md hover:border-gray-300 transition-all">
-                                    <div class="flex items-center justify-between">
-                                        <div class="flex items-center">
-                                            <span class="text-lg mr-3">💃</span>
-                                            <div>
-                                                <h5 class="font-medium text-gray-700 text-sm">Flamenco & Rumba</h5>
-                                                <p class="text-xs text-gray-500">Ritmi spagnoli tradizionali</p>
-                                            </div>
-                                        </div>
-                                        <a href="https://open.spotify.com/playlist/37i9dQZF1DWYxp9cWxWzKP" target="_blank" rel="noopener noreferrer" class="bg-green-600 text-white px-3 py-1 rounded text-xs hover:bg-green-700 transition-colors">
-                                            Spotify
-                                        </a>
-                                    </div>
-                                </div>
+                        <div class="bg-white border-l-4 border-orange-400 p-3 rounded-lg">
+                            <div class="flex items-center mb-2">
+                                <span class="text-2xl mr-2">1️⃣</span>
+                                <h4 class="font-medium text-gray-800">Lunedì 30 Dicembre</h4>
                             </div>
-                        </div>
-                        <div class="bg-gray-50 p-3 rounded-lg">
-                            <h4 class="font-medium text-gray-800 mb-2">✈️ Canzoni da Viaggio</h4>
-                            <div class="space-y-2">
-                                <div class="bg-white border border-gray-200 rounded-lg p-3 hover:shadow-md hover:border-gray-300 transition-all">
-                                    <div class="flex items-center justify-between">
-                                        <div class="flex items-center">
-                                            <span class="text-lg mr-3">🛫</span>
-                                            <div>
-                                                <h5 class="font-medium text-gray-700 text-sm">Road Trip Songs</h5>
-                                                <p class="text-xs text-gray-500">Perfette per il viaggio</p>
-                                            </div>
-                                        </div>
-                                        <a href="https://open.spotify.com/playlist/37i9dQZF1DX0XUsuxWHRQd" target="_blank" rel="noopener noreferrer" class="bg-blue-600 text-white px-3 py-1 rounded text-xs hover:bg-blue-700 transition-colors">
-                                            Spotify
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="bg-white border border-gray-200 rounded-lg p-3 hover:shadow-md hover:border-gray-300 transition-all">
-                                    <div class="flex items-center justify-between">
-                                        <div class="flex items-center">
-                                            <span class="text-lg mr-3">🌍</span>
-                                            <div>
-                                                <h5 class="font-medium text-gray-700 text-sm">Travel Vibes</h5>
-                                                <p class="text-xs text-gray-500">Atmosfere da viaggio</p>
-                                            </div>
-                                        </div>
-                                        <a href="https://open.spotify.com/playlist/37i9dQZF1DWTwnEm1IYyoj" target="_blank" rel="noopener noreferrer" class="bg-blue-600 text-white px-3 py-1 rounded text-xs hover:bg-blue-700 transition-colors">
-                                            Spotify
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="bg-gray-50 p-3 rounded-lg">
-                            <h4 class="font-medium text-gray-800 mb-2">🎉 Party Capodanno</h4>
-                            <div class="space-y-2">
-                                <div class="bg-white border border-gray-200 rounded-lg p-3 hover:shadow-md hover:border-gray-300 transition-all">
-                                    <div class="flex items-center justify-between">
-                                        <div class="flex items-center">
-                                            <span class="text-lg mr-3">🎤</span>
-                                            <div>
-                                                <h5 class="font-medium text-gray-700 text-sm">Today's Top Hits</h5>
-                                                <p class="text-xs text-gray-500">Le hit di oggi</p>
-                                            </div>
-                                        </div>
-                                        <a href="https://open.spotify.com/playlist/37i9dQZF1DXcBWIGoYBM5M" target="_blank" rel="noopener noreferrer" class="bg-red-600 text-white px-3 py-1 rounded text-xs hover:bg-red-700 transition-colors">
-                                            Spotify
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="bg-white border border-gray-200 rounded-lg p-3 hover:shadow-md hover:border-gray-300 transition-all">
-                                    <div class="flex items-center justify-between">
-                                        <div class="flex items-center">
-                                            <span class="text-lg mr-3">🌟</span>
-                                            <div>
-                                                <h5 class="font-medium text-gray-700 text-sm">Global Top 50</h5>
-                                                <p class="text-xs text-gray-500">Top mondiale</p>
-                                            </div>
-                                        </div>
-                                        <a href="https://open.spotify.com/playlist/37i9dQZF1DX0XUfTFmNBRM" target="_blank" rel="noopener noreferrer" class="bg-red-600 text-white px-3 py-1 rounded text-xs hover:bg-red-700 transition-colors">
-                                            Spotify
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                `
-            },
-            'checklist': {
-                title: '✅ Bucket List del Viaggio',
-                content: `
-                    <div class="space-y-3">
-                        <div class="bg-gray-50 p-3 rounded-lg">
-                            <h4 class="font-medium text-gray-800 mb-2">Sfide da Completare</h4>
-                            <div class="grid grid-cols-1 gap-2">
-                                <label class="flex items-center space-x-2 text-sm">
-                                    <input type="checkbox" class="rounded">
-                                    <span>📸 Foto di gruppo in Puerta del Sol</span>
-                                </label>
-                                <label class="flex items-center space-x-2 text-sm">
-                                    <input type="checkbox" class="rounded">
-                                    <span>🍇 Mangia i 12 chicchi d'uva a mezzanotte</span>
-                                </label>
-                                <label class="flex items-center space-x-2 text-sm">
-                                    <input type="checkbox" class="rounded">
-                                    <span>🥘 Assaggia le tapas tipiche</span>
-                                </label>
-                                <label class="flex items-center space-x-2 text-sm">
-                                    <input type="checkbox" class="rounded">
-                                    <span>🍫 Churros con chocolate da San Ginés</span>
-                                </label>
-                                <label class="flex items-center space-x-2 text-sm">
-                                    <input type="checkbox" class="rounded">
-                                    <span>🏰 Visita il Palazzo Reale</span>
-                                </label>
-                                <label class="flex items-center space-x-2 text-sm">
-                                    <input type="checkbox" class="rounded">
-                                    <span>🎉 Balla fino all'alba a Capodanno</span>
-                                </label>
-                                <label class="flex items-center space-x-2 text-sm">
-                                    <input type="checkbox" class="rounded">
-                                    <span>🗣️ Impara a dire "¡Feliz Año Nuevo!"</span>
-                                </label>
-                                <label class="flex items-center space-x-2 text-sm">
-                                    <input type="checkbox" class="rounded">
-                                    <span>🖼️ Visita il Museo del Prado</span>
-                                </label>
-                                <label class="flex items-center space-x-2 text-sm">
-                                    <input type="checkbox" class="rounded">
-                                    <span>🛍️ Shopping sulla Gran Via</span>
-                                </label>
-                                <label class="flex items-center space-x-2 text-sm">
-                                    <input type="checkbox" class="rounded">
-                                    <span>��� Passeggia nel Parco del Retiro</span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                `
-            },
-            'quiz': {
-                title: '🧠 Quiz WeRoad & Madrid',
-                content: `
-                    <div class="space-y-3">
-                        <div class="bg-gray-50 p-3 rounded-lg">
-                            <h4 class="font-medium text-gray-800 mb-2">Testa la tua conoscenza su WeRoad e Madrid!</h4>
-                            <div class="space-y-3 max-h-96 overflow-y-auto">
-                                <div class="bg-white p-3 rounded-lg">
-                                    <p class="text-sm font-medium mb-2">1. Quanto costa la cassa comune per questo viaggio?</p>
-                                    <div class="space-y-1">
-                                        <label class="flex items-center space-x-2 text-sm">
-                                            <input type="radio" name="q1" value="a">
-                                            <span>100€</span>
-                                        </label>
-                                        <label class="flex items-center space-x-2 text-sm">
-                                            <input type="radio" name="q1" value="b">
-                                            <span>150€</span>
-                                        </label>
-                                        <label class="flex items-center space-x-2 text-sm">
-                                            <input type="radio" name="q1" value="c">
-                                            <span>200€</span>
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="bg-white p-3 rounded-lg">
-                                    <p class="text-sm font-medium mb-2">2. Quanti chicchi d'uva si mangiano a mezzanotte?</p>
-                                    <div class="space-y-1">
-                                        <label class="flex items-center space-x-2 text-sm">
-                                            <input type="radio" name="q2" value="a">
-                                            <span>10 chicchi</span>
-                                        </label>
-                                        <label class="flex items-center space-x-2 text-sm">
-                                            <input type="radio" name="q2" value="b">
-                                            <span>12 chicchi</span>
-                                        </label>
-                                        <label class="flex items-center space-x-2 text-sm">
-                                            <input type="radio" name="q2" value="c">
-                                            <span>15 chicchi</span>
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="bg-white p-3 rounded-lg">
-                                    <p class="text-sm font-medium mb-2">3. Il coordinatore WeRoad è:</p>
-                                    <div class="space-y-1">
-                                        <label class="flex items-center space-x-2 text-sm">
-                                            <input type="radio" name="q3" value="a">
-                                            <span>Un compagno di viaggio</span>
-                                        </label>
-                                        <label class="flex items-center space-x-2 text-sm">
-                                            <input type="radio" name="q3" value="b">
-                                            <span>Una guida turistica</span>
-                                        </label>
-                                        <label class="flex items-center space-x-2 text-sm">
-                                            <input type="radio" name="q3" value="c">
-                                            <span>Un autista</span>
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="bg-white p-3 rounded-lg">
-                                    <p class="text-sm font-medium mb-2">4. Dove si festeggia il Capodanno a Madrid?</p>
-                                    <div class="space-y-1">
-                                        <label class="flex items-center space-x-2 text-sm">
-                                            <input type="radio" name="q4" value="a">
-                                            <span>Puerta del Sol</span>
-                                        </label>
-                                        <label class="flex items-center space-x-2 text-sm">
-                                            <input type="radio" name="q4" value="b">
-                                            <span>Plaza Mayor</span>
-                                        </label>
-                                        <label class="flex items-center space-x-2 text-sm">
-                                            <input type="radio" name="q4" value="c">
-                                            <span>Retiro Park</span>
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="bg-white p-3 rounded-lg">
-                                    <p class="text-sm font-medium mb-2">5. Quante persone massimo partecipano a un viaggio WeRoad?</p>
-                                    <div class="space-y-1">
-                                        <label class="flex items-center space-x-2 text-sm">
-                                            <input type="radio" name="q5" value="a">
-                                            <span>15 persone</span>
-                                        </label>
-                                        <label class="flex items-center space-x-2 text-sm">
-                                            <input type="radio" name="q5" value="b">
-                                            <span>20 persone</span>
-                                        </label>
-                                        <label class="flex items-center space-x-2 text-sm">
-                                            <input type="radio" name="q5" value="c">
-                                            <span>12 persone</span>
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="bg-white p-3 rounded-lg">
-                                    <p class="text-sm font-medium mb-2">6. Qual è il dolce tipico madrileno?</p>
-                                    <div class="space-y-1">
-                                        <label class="flex items-center space-x-2 text-sm">
-                                            <input type="radio" name="q6" value="a">
-                                            <span>Tiramisu</span>
-                                        </label>
-                                        <label class="flex items-center space-x-2 text-sm">
-                                            <input type="radio" name="q6" value="b">
-                                            <span>Churros con chocolate</span>
-                                        </label>
-                                        <label class="flex items-center space-x-2 text-sm">
-                                            <input type="radio" name="q6" value="c">
-                                            <span>Crème brûlée</span>
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="bg-white p-3 rounded-lg">
-                                    <p class="text-sm font-medium mb-2">7. Come si chiama la coordinatrice di questo viaggio?</p>
-                                    <div class="space-y-1">
-                                        <label class="flex items-center space-x-2 text-sm">
-                                            <input type="radio" name="q7" value="a">
-                                            <span>Sabrina</span>
-                                        </label>
-                                        <label class="flex items-center space-x-2 text-sm">
-                                            <input type="radio" name="q7" value="b">
-                                            <span>Sara</span>
-                                        </label>
-                                        <label class="flex items-center space-x-2 text-sm">
-                                            <input type="radio" name="q7" value="c">
-                                            <span>Silvia</span>
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="bg-white p-3 rounded-lg">
-                                    <p class="text-sm font-medium mb-2">8. Come si dice "Buon Anno" in spagnolo?</p>
-                                    <div class="space-y-1">
-                                        <label class="flex items-center space-x-2 text-sm">
-                                            <input type="radio" name="q8" value="a">
-                                            <span>¡Feliz Año Nuevo!</span>
-                                        </label>
-                                        <label class="flex items-center space-x-2 text-sm">
-                                            <input type="radio" name="q8" value="b">
-                                            <span>¡Feliz Navidad!</span>
-                                        </label>
-                                        <label class="flex items-center space-x-2 text-sm">
-                                            <input type="radio" name="q8" value="c">
-                                            <span>¡Buena suerte!</span>
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="bg-white p-3 rounded-lg">
-                                    <p class="text-sm font-medium mb-2">9. Che tipo di viaggio WeRoad stiamo facendo?</p>
-                                    <div class="space-y-1">
-                                        <label class="flex items-center space-x-2 text-sm">
-                                            <input type="radio" name="q9" value="a">
-                                            <span>Weekend</span>
-                                        </label>
-                                        <label class="flex items-center space-x-2 text-sm">
-                                            <input type="radio" name="q9" value="b">
-                                            <span>Viaggio Relax</span>
-                                        </label>
-                                        <label class="flex items-center space-x-2 text-sm">
-                                            <input type="radio" name="q9" value="c">
-                                            <span>Tour Culturale</span>
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="bg-white p-3 rounded-lg">
-                                    <p class="text-sm font-medium mb-2">10. Qual è la bevanda tipica spagnola?</p>
-                                    <div class="space-y-1">
-                                        <label class="flex items-center space-x-2 text-sm">
-                                            <input type="radio" name="q10" value="a">
-                                            <span>Sangria</span>
-                                        </label>
-                                        <label class="flex items-center space-x-2 text-sm">
-                                            <input type="radio" name="q10" value="b">
-                                            <span>Mojito</span>
-                                        </label>
-                                        <label class="flex items-center space-x-2 text-sm">
-                                            <input type="radio" name="q10" value="c">
-                                            <span>Aperol</span>
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="bg-white p-3 rounded-lg">
-                                    <p class="text-sm font-medium mb-2">11. Cosa NON include la cassa comune?</p>
-                                    <div class="space-y-1">
-                                        <label class="flex items-center space-x-2 text-sm">
-                                            <input type="radio" name="q11" value="a">
-                                            <span>Trasporti locali</span>
-                                        </label>
-                                        <label class="flex items-center space-x-2 text-sm">
-                                            <input type="radio" name="q11" value="b">
-                                            <span>Pasti individuali</span>
-                                        </label>
-                                        <label class="flex items-center space-x-2 text-sm">
-                                            <input type="radio" name="q11" value="c">
-                                            <span>Biglietti musei</span>
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="bg-white p-3 rounded-lg">
-                                    <p class="text-sm font-medium mb-2">12. Come si dice "Grazie" in spagnolo?</p>
-                                    <div class="space-y-1">
-                                        <label class="flex items-center space-x-2 text-sm">
-                                            <input type="radio" name="q12" value="a">
-                                            <span>Hola</span>
-                                        </label>
-                                        <label class="flex items-center space-x-2 text-sm">
-                                            <input type="radio" name="q12" value="b">
-                                            <span>Gracias</span>
-                                        </label>
-                                        <label class="flex items-center space-x-2 text-sm">
-                                            <input type="radio" name="q12" value="c">
-                                            <span>Por favor</span>
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="bg-white p-3 rounded-lg">
-                                    <p class="text-sm font-medium mb-2">13. Che temperatura ci aspettiamo a Madrid a dicembre?</p>
-                                    <div class="space-y-1">
-                                        <label class="flex items-center space-x-2 text-sm">
-                                            <input type="radio" name="q13" value="a">
-                                            <span>5-10°C di giorno</span>
-                                        </label>
-                                        <label class="flex items-center space-x-2 text-sm">
-                                            <input type="radio" name="q13" value="b">
-                                            <span>15-20°C di giorno</span>
-                                        </label>
-                                        <label class="flex items-center space-x-2 text-sm">
-                                            <input type="radio" name="q13" value="c">
-                                            <span>20-25°C di giorno</span>
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="bg-white p-3 rounded-lg">
-                                    <p class="text-sm font-medium mb-2">14. Qual è il museo più famoso di Madrid?</p>
-                                    <div class="space-y-1">
-                                        <label class="flex items-center space-x-2 text-sm">
-                                            <input type="radio" name="q14" value="a">
-                                            <span>Museo del Prado</span>
-                                        </label>
-                                        <label class="flex items-center space-x-2 text-sm">
-                                            <input type="radio" name="q14" value="b">
-                                            <span>Louvre</span>
-                                        </label>
-                                        <label class="flex items-center space-x-2 text-sm">
-                                            <input type="radio" name="q14" value="c">
-                                            <span>British Museum</span>
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="bg-white p-3 rounded-lg">
-                                    <p class="text-sm font-medium mb-2">15. Che valuta si usa in Spagna?</p>
-                                    <div class="space-y-1">
-                                        <label class="flex items-center space-x-2 text-sm">
-                                            <input type="radio" name="q15" value="a">
-                                            <span>Euro (€)</span>
-                                        </label>
-                                        <label class="flex items-center space-x-2 text-sm">
-                                            <input type="radio" name="q15" value="b">
-                                            <span>Peseta</span>
-                                        </label>
-                                        <label class="flex items-center space-x-2 text-sm">
-                                            <input type="radio" name="q15" value="c">
-                                            <span>Dollaro</span>
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="bg-white p-3 rounded-lg">
-                                    <p class="text-sm font-medium mb-2">16. Qual è il parco più famoso di Madrid?</p>
-                                    <div class="space-y-1">
-                                        <label class="flex items-center space-x-2 text-sm">
-                                            <input type="radio" name="q16" value="a">
-                                            <span>Parco del Retiro</span>
-                                        </label>
-                                        <label class="flex items-center space-x-2 text-sm">
-                                            <input type="radio" name="q16" value="b">
-                                            <span>Hyde Park</span>
-                                        </label>
-                                        <label class="flex items-center space-x-2 text-sm">
-                                            <input type="radio" name="q16" value="c">
-                                            <span>Central Park</span>
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="bg-white p-3 rounded-lg">
-                                    <p class="text-sm font-medium mb-2">17. Qual è la strada dello shopping più famosa?</p>
-                                    <div class="space-y-1">
-                                        <label class="flex items-center space-x-2 text-sm">
-                                            <input type="radio" name="q17" value="a">
-                                            <span>Gran Via</span>
-                                        </label>
-                                        <label class="flex items-center space-x-2 text-sm">
-                                            <input type="radio" name="q17" value="b">
-                                            <span>Oxford Street</span>
-                                        </label>
-                                        <label class="flex items-center space-x-2 text-sm">
-                                            <input type="radio" name="q17" value="c">
-                                            <span>Champs-Élysées</span>
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="bg-white p-3 rounded-lg">
-                                    <p class="text-sm font-medium mb-2">18. Come si dice "Per favore" in spagnolo?</p>
-                                    <div class="space-y-1">
-                                        <label class="flex items-center space-x-2 text-sm">
-                                            <input type="radio" name="q18" value="a">
-                                            <span>Gracias</span>
-                                        </label>
-                                        <label class="flex items-center space-x-2 text-sm">
-                                            <input type="radio" name="q18" value="b">
-                                            <span>Por favor</span>
-                                        </label>
-                                        <label class="flex items-center space-x-2 text-sm">
-                                            <input type="radio" name="q18" value="c">
-                                            <span>De nada</span>
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="bg-white p-3 rounded-lg">
-                                    <p class="text-sm font-medium mb-2">19. Qual è il piatto tipico di tapas?</p>
-                                    <div class="space-y-1">
-                                        <label class="flex items-center space-x-2 text-sm">
-                                            <input type="radio" name="q19" value="a">
-                                            <span>Patatas bravas</span>
-                                        </label>
-                                        <label class="flex items-center space-x-2 text-sm">
-                                            <input type="radio" name="q19" value="b">
-                                            <span>Sushi</span>
-                                        </label>
-                                        <label class="flex items-center space-x-2 text-sm">
-                                            <input type="radio" name="q19" value="c">
-                                            <span>Pasta carbonara</span>
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="bg-white p-3 rounded-lg">
-                                    <p class="text-sm font-medium mb-2">20. Qual è il prosciutto spagnolo più famoso?</p>
-                                    <div class="space-y-1">
-                                        <label class="flex items-center space-x-2 text-sm">
-                                            <input type="radio" name="q20" value="a">
-                                            <span>Jamón ibérico</span>
-                                        </label>
-                                        <label class="flex items-center space-x-2 text-sm">
-                                            <input type="radio" name="q20" value="b">
-                                            <span>Prosciutto di Parma</span>
-                                        </label>
-                                        <label class="flex items-center space-x-2 text-sm">
-                                            <input type="radio" name="q20" value="c">
-                                            <span>Bacon</span>
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="bg-white p-3 rounded-lg">
-                                    <p class="text-sm font-medium mb-2">21. Cosa rappresentano i 12 chicchi d'uva?</p>
-                                    <div class="space-y-1">
-                                        <label class="flex items-center space-x-2 text-sm">
-                                            <input type="radio" name="q21" value="a">
-                                            <span>I 12 mesi dell'anno</span>
-                                        </label>
-                                        <label class="flex items-center space-x-2 text-sm">
-                                            <input type="radio" name="q21" value="b">
-                                            <span>I 12 apostoli</span>
-                                        </label>
-                                        <label class="flex items-center space-x-2 text-sm">
-                                            <input type="radio" name="q21" value="c">
-                                            <span>Le 12 ore</span>
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="bg-white p-3 rounded-lg">
-                                    <p class="text-sm font-medium mb-2">22. Qual è la squadra di calcio più famosa di Madrid?</p>
-                                    <div class="space-y-1">
-                                        <label class="flex items-center space-x-2 text-sm">
-                                            <input type="radio" name="q22" value="a">
-                                            <span>Real Madrid</span>
-                                        </label>
-                                        <label class="flex items-center space-x-2 text-sm">
-                                            <input type="radio" name="q22" value="b">
-                                            <span>Barcelona</span>
-                                        </label>
-                                        <label class="flex items-center space-x-2 text-sm">
-                                            <input type="radio" name="q22" value="c">
-                                            <span>Manchester United</span>
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="bg-white p-3 rounded-lg">
-                                    <p class="text-sm font-medium mb-2">23. Dove si trova la Chocolatería San Ginés?</p>
-                                    <div class="space-y-1">
-                                        <label class="flex items-center space-x-2 text-sm">
-                                            <input type="radio" name="q23" value="a">
-                                            <span>Centro di Madrid</span>
-                                        </label>
-                                        <label class="flex items-center space-x-2 text-sm">
-                                            <input type="radio" name="q23" value="b">
-                                            <span>Barcellona</span>
-                                        </label>
-                                        <label class="flex items-center space-x-2 text-sm">
-                                            <input type="radio" name="q23" value="c">
-                                            <span>Valencia</span>
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="bg-white p-3 rounded-lg">
-                                    <p class="text-sm font-medium mb-2">24. Quale artista ha un museo dedicato a Madrid?</p>
-                                    <div class="space-y-1">
-                                        <label class="flex items-center space-x-2 text-sm">
-                                            <input type="radio" name="q24" value="a">
-                                            <span>Picasso</span>
-                                        </label>
-                                        <label class="flex items-center space-x-2 text-sm">
-                                            <input type="radio" name="q24" value="b">
-                                            <span>Van Gogh</span>
-                                        </label>
-                                        <label class="flex items-center space-x-2 text-sm">
-                                            <input type="radio" name="q24" value="c">
-                                            <span>Monet</span>
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="bg-white p-3 rounded-lg">
-                                    <p class="text-sm font-medium mb-2">25. Qual è il quartiere più hipster di Madrid?</p>
-                                    <div class="space-y-1">
-                                        <label class="flex items-center space-x-2 text-sm">
-                                            <input type="radio" name="q25" value="a">
-                                            <span>Malasaña</span>
-                                        </label>
-                                        <label class="flex items-center space-x-2 text-sm">
-                                            <input type="radio" name="q25" value="b">
-                                            <span>Salamanca</span>
-                                        </label>
-                                        <label class="flex items-center space-x-2 text-sm">
-                                            <input type="radio" name="q25" value="c">
-                                            <span>Chamberí</span>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                            <button onclick="checkQuiz()" class="mt-3 bg-gray-700 text-white px-4 py-2 rounded-lg hover:bg-gray-800 transition-colors text-sm">
-                                Controlla Risposte
-                            </button>
-                            <div id="quiz-result" class="mt-3 text-sm"></div>
-                        </div>
-                    </div>
-                `
-            },
-            'emergency': {
-                title: '🚨 Emergency Kit',
-                content: `
-                    <div class="space-y-3">
-                        <div class="bg-gray-50 p-3 rounded-lg">
-                            <h4 class="font-medium text-gray-800 mb-2">Numeri di Emergenza</h4>
-                            <ul class="text-sm space-y-1 text-gray-600">
-                                <li><strong>Emergenze generali:</strong> 112</li>
-                                <li><strong>Polizia:</strong> 091</li>
-                                <li><strong>Vigili del Fuoco:</strong> 080</li>
-                                <li><strong>Ambulanza:</strong> 061</li>
-                                <li><strong>Polizia Turistica:</strong> +34 915 48 85 37</li>
-                            </ul>
-                        </div>
-                        <div class="bg-gray-50 p-3 rounded-lg">
-                            <h4 class="font-medium text-gray-800 mb-2">Consolato Italiano</h4>
-                            <ul class="text-sm space-y-1 text-gray-600">
-                                <li><strong>Indirizzo:</strong> Calle Lagasca 98, Madrid</li>
-                                <li><strong>Tel:</strong> +34 915 76 83 40</li>
-                                <li><strong>Emergenze:</strong> +34 616 68 79 51</li>
-                            </ul>
-                        </div>
-                        <div class="bg-gray-50 p-3 rounded-lg">
-                            <h4 class="font-medium text-gray-800 mb-2">Farmacie & Ospedali</h4>
-                            <ul class="text-sm space-y-1 text-gray-600">
-                                <li><strong>Farmacia 24h:</strong> Gran Via 46</li>
-                                <li><strong>Ospedale La Paz:</strong> +34 917 27 70 00</li>
-                                <li><strong>Farmacie di turno:</strong> www.cofm.es</li>
-                            </ul>
-                        </div>
-                    </div>
-                `
-            },
-            'faq': {
-                title: '❓ FAQ',
-                content: `
-                    <div class="space-y-3 max-h-96 overflow-y-auto">
-                        <div class="bg-blue-50 p-3 rounded-lg">
-                            <h4 class="font-medium text-blue-800 mb-2">🌍 Domande su WeRoad</h4>
-                        </div>
-                        <div class="border-l-4 border-blue-300 pl-3">
-                            <h4 class="font-medium mb-1">Come funziona un viaggio WeRoad?</h4>
-                            <p class="text-sm text-gray-600">Viaggi in piccoli gruppi (max 15 persone) con un coordinatore locale che vi accompagna e organizza le attività. È perfetto per chi vuole viaggiare in compagnia senza stress organizzativo!</p>
-                        </div>
-                        <div class="border-l-4 border-blue-300 pl-3">
-                            <h4 class="font-medium mb-1">Cosa include il prezzo WeRoad?</h4>
-                            <p class="text-sm text-gray-600">Alloggio, coordinatore, alcune attività base. NON include voli, pasti, cassa comune (150€) e attività extra.</p>
-                        </div>
-                        
-                        <div class="bg-gray-50 p-3 rounded-lg">
-                            <h4 class="font-medium text-gray-800 mb-2">🇪🇸 Domande su Madrid</h4>
-                        </div>
-                        <div class="border-l-4 border-gray-300 pl-3">
-                            <h4 class="font-medium mb-1">Che tempo farà a Capodanno?</h4>
-                            <p class="text-sm text-gray-600">Freddo! (5-10°C di giorno, 0-5°C di notte). Porta cappotto pesante, sciarpa e guanti. La sera di Capodanno può essere gelida!</p>
-                        </div>
-                        <div class="border-l-4 border-gray-300 pl-3">
-                            <h4 class="font-medium mb-1">Come funziona la tradizione dei 12 chicchi?</h4>
-                            <p class="text-sm text-gray-600">A mezzanotte, mangia 1 chicco d'uva per ogni rintocco dell'orologio in Puerta del Sol. Ogni chicco porta fortuna per un mese del nuovo anno!</p>
-                        </div>
-                        <div class="border-l-4 border-gray-300 pl-3">
-                            <h4 class="font-medium mb-1">Che valuta si usa?</h4>
-                            <p class="text-sm text-gray-600">Euro (€). Carte accettate ovunque, ma porta contanti per tapas bar e mercatini. ATM disponibili in tutta la città.</p>
-                        </div>
-                        <div class="border-l-4 border-gray-300 pl-3">
-                            <h4 class="font-medium mb-1">Quanto costa mediamente un pasto?</h4>
-                            <p class="text-sm text-gray-600">Tapas bar: 10-15€, ristorante medio: 20-30€, menù del día: 12-15€. Attenzione: Capodanno costa di più!</p>
-                        </div>
-                        <div class="border-l-4 border-gray-300 pl-3">
-                            <h4 class="font-medium mb-1">Come muoversi a Madrid?</h4>
-                            <p class="text-sm text-gray-600">Metro efficientissimo (biglietto 1,50-2€), centro storico a piedi. La notte di Capodanno metro aperto tutta notte GRATIS!</p>
-                        </div>
-                        <div class="border-l-4 border-gray-300 pl-3">
-                            <h4 class="font-medium mb-1">Cosa comprare come souvenir?</h4>
-                            <p class="text-sm text-gray-600">Jamón ibérico, turron, ventaglio spagnolo, prodotti Real Madrid/Atlético, ceramiche. El Rastro (mercato domenicale) per vintage!</p>
-                        </div>
-                        <div class="border-l-4 border-gray-300 pl-3">
-                            <h4 class="font-medium mb-1">È sicura Madrid?</h4>
-                            <p class="text-sm text-gray-600">Molto sicura. Attenzione ai borseggiatori in metro e Puerta del Sol, specialmente a Capodanno con la folla. Il centro è sicurissimo.</p>
-                        </div>
-                        <div class="border-l-4 border-gray-300 pl-3">
-                            <h4 class="font-medium mb-1">Parlano inglese?</h4>
-                            <p class="text-sm text-gray-600">Nei luoghi turistici sì. Impara: "Hola" (ciao), "Gracias" (grazie), "¡Feliz Año Nuevo!" (Buon Anno). Gli spagnoli apprezzano molto!</p>
-                        </div>
-                    </div>
-                `
-            },
-            'meteo': {
-                title: '🌤️ Meteo Weekend Madrid',
-                content: `
-                    <div class="space-y-3">
-                        <div class="bg-gray-50 p-3 rounded-lg">
-                            <h4 class="font-medium text-gray-800 mb-3">Previsioni 30 Dic - 1 Gen</h4>
-                            <div class="grid grid-cols-3 gap-3 mb-3">
-                                <div class="bg-white p-3 rounded-lg text-center border">
-                                    <p class="text-xs text-gray-500 mb-1">Lun 30</p>
-                                    <div class="text-2xl mb-1">🌤️</div>
-                                    <p class="text-sm font-medium">10°C</p>
-                                    <p class="text-xs text-gray-500">Soleggiato</p>
-                                </div>
-                                <div class="bg-white p-3 rounded-lg text-center border">
-                                    <p class="text-xs text-gray-500 mb-1">Mar 31</p>
-                                    <div class="text-2xl mb-1">❄️</div>
-                                    <p class="text-sm font-medium">8°C</p>
-                                    <p class="text-xs text-gray-500">Freddo</p>
-                                </div>
-                                <div class="bg-white p-3 rounded-lg text-center border">
-                                    <p class="text-xs text-gray-500 mb-1">Mer 1</p>
-                                    <div class="text-2xl mb-1">☀️</div>
-                                    <p class="text-sm font-medium">9°C</p>
-                                    <p class="text-xs text-gray-500">Sereno</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="bg-blue-50 p-3 rounded-lg">
-                            <h4 class="font-medium text-gray-800 mb-2">📋 Consigli Abbigliamento</h4>
-                            <ul class="text-sm space-y-1 text-gray-600">
-                                <li>❄️ <strong>Giorno:</strong> Cappotto pesante, maglione (5-10°C)</li>
-                                <li>🌙 <strong>Sera:</strong> Cappotto + sciarpa + guanti (0-5°C)</li>
-                                <li>👟 <strong>Scarpe:</strong> Comode e chiuse, NO sandali!</li>
-                                <li>🧣 <strong>Accessori:</strong> Sciarpa, cappello, guanti ESSENZIALI</li>
-                                <li>🎉 <strong>Capodanno:</strong> Vestiti caldi ma eleganti!</li>
-                            </ul>
-                        </div>
-
-                        <div class="bg-gray-50 p-3 rounded-lg text-center">
-                            <h4 class="font-medium text-gray-800 mb-2">🌍 Previsioni Dettagliate</h4>
-                            <p class="text-sm text-gray-600 mb-3">Per previsioni aggiornate e dettagliate:</p>
-                            <a href="https://weather.com/weather/tenday/l/Madrid+Spain" target="_blank" rel="noopener noreferrer" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors text-sm">
-                                Apri Weather.com
-                            </a>
-                        </div>
-                    </div>
-                `
-            },
-            'info-utili': {
-                title: '📋 Info Utili & Form',
-                content: `
-                    <div class="space-y-3">
-                        <div class="bg-gradient-to-r from-blue-50 to-purple-50 p-3 rounded-lg">
-                            <h4 class="font-medium text-gray-800 mb-2">💬 Aiutami a Organizzare il Viaggio Perfetto!</h4>
-                            <p class="text-sm text-gray-700 mb-3">Compila questi form per aiutarmi a personalizzare al meglio la nostra esperienza a Madrid. Più informazioni mi dai, più riuscirò a rendere questo weekend indimenticabile per tutti! 🌟</p>
-                        </div>
-
-                        <div class="space-y-3">
-                            <div class="bg-white border border-gray-200 rounded-lg p-3 hover:shadow-md hover:border-gray-300 transition-all">
-                                <div class="flex items-center justify-between">
-                                    <div class="flex items-center">
-                                        <span class="text-2xl mr-3">🎯</span>
-                                        <div>
-                                            <h5 class="font-medium text-gray-700 text-sm">Aspettative & Preferenze</h5>
-                                            <p class="text-xs text-gray-500">Dimmi cosa ti aspetti dal viaggio e le tue preferenze per il terzo giorno</p>
-                                        </div>
-                                    </div>
-                                    <a href="https://docs.google.com/forms/d/e/1FAIpQLScRPV7_ofE-ZF2bVy_wEEVh6jklQwYMj2d1yC09KhVesjxv9g/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer" class="bg-blue-600 text-white px-3 py-1 rounded text-xs hover:bg-blue-700 transition-colors">
-                                        Compila
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div class="bg-white border border-gray-200 rounded-lg p-3 hover:shadow-md hover:border-gray-300 transition-all">
-                                <div class="flex items-center justify-between">
-                                    <div class="flex items-center">
-                                        <span class="text-2xl mr-3">🍽️</span>
-                                        <div>
-                                            <h5 class="font-medium text-gray-700 text-sm">Esigenze Alimentari</h5>
-                                            <p class="text-xs text-gray-500">Allergie, intolleranze, preferenze alimentari e diete speciali</p>
-                                        </div>
-                                    </div>
-                                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSf49uu2iezQhyN9nHsyB9DZWsvctVOBztOHU9vaIlib_mAm6A/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer" class="bg-green-600 text-white px-3 py-1 rounded text-xs hover:bg-green-700 transition-colors">
-                                        Compila
-                                    </a>
-                                </div>
-                            </div>
-
-
-                        </div>
-
-
-
-                        <div class="bg-gray-50 p-3 rounded-lg">
-                            <h4 class="font-medium text-gray-800 mb-2">📞 Contatti Diretti</h4>
-                            <div class="space-y-2 text-sm">
-                                <div class="flex items-center">
-                                    <span class="text-gray-400 mr-2">📧</span>
-                                    <a href="mailto:cocosabrina.wr@gmail.com" class="text-blue-600 hover:underline">cocosabrina.wr@gmail.com</a>
-                                </div>
-                                <div class="flex items-center">
-                                    <span class="text-gray-400 mr-2">📱</span>
-                                    <a href="tel:+393477257071" class="text-blue-600 hover:underline">+39 347 725 7071</a>
-                                </div>
-                                <div class="flex items-center">
-                                    <span class="text-gray-400 mr-2">📸</span>
-                                    <a href="https://instagram.com/awild_coco" target="_blank" rel="noopener noreferrer" class="text-pink-600 hover:underline">@awild_coco</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                `
-            },
-            'weroad': {
-                title: '🌍 WeRoad in a Nutshell',
-                content: `
-                    <div class="space-y-3">
-                        <div class="bg-gray-50 p-3 rounded-lg">
-                            <h4 class="font-medium text-gray-800 mb-2">🤔 Prima volta con WeRoad?</h4>
-                            <p class="text-sm text-gray-700 mb-3">Allora ti sarà utile sapere come funziona e cosa aspettarti:</p>
-                            <p class="text-sm text-gray-700 mb-3">Da queste parti ci piace conoscere il luogo, ma anche la gente che ci accompagna, che darà un sapore particolare e unico all'itinerario: ogni viaggio è diverso, ma anche ogni gruppo lo è! 🌍💬 Anche il coordinatore è uno di voi, un compagno di viaggio. Ben lontano dall'essere una guida a Madrid, sono tanto gasata quanto voi, con la differenza che WeRoad mi fornisce tutti gli strumenti per farvi passare un weekend indimenticabile e al tempo stesso farvi dimenticare di tutto il resto. 🚶‍♀️🎉</p>
-                            <p class="text-sm text-gray-700"><strong>Questo è lo spirito WeRoad, ma se hai ancora domande... sai dove trovarmi! 👋💌</strong></p>
-                        </div>
-
-                        <div class="bg-gray-50 p-3 rounded-lg">
-                            <h4 class="font-medium text-gray-800 mb-2">💫 I Valori WeRoad</h4>
-                            <ul class="text-sm space-y-2 text-gray-600">
-                                <li class="flex items-start">
-                                    <span class="text-orange-500 mr-2">🌱</span>
-                                    <span><strong>Viaggi autentici e sostenibili</strong></span>
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="text-orange-500 mr-2">👥</span>
-                                    <span><strong>Gruppi piccoli</strong> (max 15 persone)</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="text-orange-500 mr-2">🏠</span>
-                                    <span><strong>Esperienze locali genuine</strong></span>
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="text-orange-500 mr-2">❤️</span>
-                                    <span><strong>Community di viaggiatori appassionati</strong></span>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div class="bg-gray-50 p-3 rounded-lg">
-                            <h4 class="font-medium text-gray-800 mb-2">🎉 Madrid Capodanno Edition</h4>
-                            <p class="text-sm text-gray-700 mb-3">Un Capodanno indimenticabile nella capitale spagnola! 🇪🇸 Arte, tapas, flamenco e i 12 rintocchi più famosi del mondo in Puerta del Sol! 🍇🎊</p>
-                        </div>
-
-                        <div class="bg-gray-50 p-3 rounded-lg">
-                            <h4 class="font-medium text-gray-800 mb-2">✨ Highlights</h4>
-                            <ul class="text-sm space-y-1 text-gray-600">
-                                <li>🎉 Capodanno in Puerta del Sol con i 12 chicchi d'uva</li>
-                                <li>🖼️ Museo del Prado - capolavori di Velázquez e Goya</li>
-                                <li>🏰 Palazzo Reale di Madrid</li>
-                                <li>🍫 Churros con chocolate da San Ginés</li>
-                                <li>����� Tour delle tapas nei quartieri tipici</li>
-                                <li>🌳 Parco del Retiro e Palacio de Cristal</li>
-                            </ul>
-                        </div>
-
-                        <div class="bg-gray-50 p-3 rounded-lg">
-                            <h4 class="font-medium text-gray-800 mb-2">🎯 Esperienze</h4>
-                            <ul class="text-sm space-y-1 text-gray-600">
-                                <li>🥘 Tapas e cucina madrilena autentica</li>
-                                <li>🎨 Arte e cultura spagnola</li>
-                                <li>🛍️ Shopping sulla Gran Via</li>
-                                <li>💃 Vita notturna e festa fino all'alba</li>
-                                <li>🍇 Tradizioni spagnole di Capodanno</li>
-                            </ul>
-                        </div>
-
-                        <div class="bg-gray-50 p-3 rounded-lg">
-                            <h4 class="font-medium text-gray-800 mb-2">👩‍🦱 La Vostra Coordinatrice</h4>
-                            <div class="bg-white p-3 rounded-lg">
-                                <div class="flex items-center mb-3">
-                                    <div class="bg-orange-100 rounded-full p-2 mr-3">
-                                        <span class="text-lg">👩‍🦱</span>
-                                    </div>
+                            <div class="space-y-2 text-sm text-gray-700">
+                                <div class="flex items-start">
+                                    <span class="mr-2">🏨</span>
                                     <div>
-                                        <p class="font-medium text-gray-800">Sabrina</p>
-                                        <p class="text-xs text-gray-500">Coordinatrice WeRoad</p>
+                                        <strong>Check-in e primo incontro</strong>
+                                        <p class="text-xs text-gray-600">Ci conosciamo in hotel e inizia l'avventura!</p>
                                     </div>
                                 </div>
-                                <div class="space-y-2 text-sm">
-                                    <div class="flex items-center">
-                                        <span class="text-gray-400 mr-2">📧</span>
-                                        <a href="mailto:cocosabrina.wr@gmail.com" class="text-blue-600 hover:underline">cocosabrina.wr@gmail.com</a>
+                                <div class="flex items-start">
+                                    <span class="mr-2">🚶</span>
+                                    <div>
+                                        <strong>Giro del centro di Madrid</strong>
+                                        <p class="text-xs text-gray-600">Plaza Mayor, Puerta del Sol, Palazzo Reale e dintorni</p>
                                     </div>
-                                    <div class="flex items-center">
-                                        <span class="text-gray-400 mr-2">📧</span>
-                                        <a href="mailto:sabrina_coco@hotmail.it" class="text-blue-600 hover:underline">sabrina_coco@hotmail.it</a>
+                                </div>
+                                <div class="flex items-start">
+                                    <span class="mr-2">🥘</span>
+                                    <div>
+                                        <strong>Paella per cena</strong>
+                                        <p class="text-xs text-gray-600">Il piatto spagnolo più iconico tutti insieme!</p>
                                     </div>
-                                    <div class="flex items-center">
-                                        <span class="text-gray-400 mr-2">📱</span>
-                                        <a href="tel:+393477257071" class="text-blue-600 hover:underline">+39 347 725 7071</a>
-                                    </div>
-                                    <div class="flex items-center">
-                                        <span class="text-gray-400 mr-2">📸</span>
-                                        <a href="https://instagram.com/awild_coco" target="_blank" rel="noopener noreferrer" class="text-pink-600 hover:underline">@awild_coco</a>
+                                </div>
+                                <div class="flex items-start">
+                                    <span class="mr-2">🎉</span>
+                                    <div>
+                                        <strong>Vita notturna madrilena</strong>
+                                        <p class="text-xs text-gray-600">Scopriamo i locali e l'energia della notte di Madrid</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="bg-gradient-to-r from-orange-50 to-red-50 p-3 rounded-lg text-center">
-                            <p class="text-sm text-gray-700 mb-2">🌟 <strong>Ready to WeRoad?</strong></p>
-                            <p class="text-xs text-gray-600">Preparatevi a vivere un weekend che ricorderete per sempre!</p>
-                        </div>
-                    </div>
-                `
-            }
-        };
-
-        function openSection(sectionId) {
-            const section = sections[sectionId];
-            if (section) {
-                document.getElementById('modal-title').innerHTML = section.title;
-                document.getElementById('modal-content').innerHTML = section.content;
-                document.getElementById('modal').classList.remove('hidden');
-                document.getElementById('modal').classList.add('flex');
-            }
-        }
-
-        function closeModal() {
-            document.getElementById('modal').classList.add('hidden');
-            document.getElementById('modal').classList.remove('flex');
-        }
-
-        function checkQuiz() {
-            // Risposte corrette per 25 domande (mischiate WeRoad e Madrid)
-            const answers = ['b', 'b', 'a', 'a', 'a', 'b', 'a', 'a', 'a', 'a', 'b', 'b', 'a', 'a', 'a', 'a', 'a', 'b', 'a', 'a', 'a', 'a', 'a', 'a', 'a'];
+                        <div class="bg-white border-l-4 border-red-400 p-3 rounded-lg">
             
-            // Commenti per ogni risposta corretta
-            const comments = [
-                '💰 Esatto! 150€ è l\'importo della cassa comune per questo Capodanno a Madrid.',
-                '🍇 Perfetto! Si mangiano 12 chicchi d\'uva, uno per ogni rintocco di mezzanotte!',
-                '👥 Giusto! Il coordinatore WeRoad è un compagno di viaggio, non una guida tradizionale.',
-                '🎉 Corretto! Puerta del Sol è il luogo iconico dove tutta Madrid festeggia Capodanno!',
-                '✅ Esatto! I viaggi WeRoad hanno massimo 15 partecipanti per mantenere l\'atmosfera intima.',
-                '🍫 Perfetto! Churros con chocolate è il dolce tipico madrileno, specialmente da San Ginés!',
-                '👩‍🦱 Giusto! Sabrina è la vostra coordinatrice per questo Capodanno a Madrid.',
-                '🎊 Corretto! "¡Feliz Año Nuevo!" significa "Buon Anno" in spagnolo.',
-                '🌍 Esatto! Questo è un Weekend WeRoad, perfetto per festeggiare Capodanno a Madrid!',
-                '🍷 Perfetto! La sangria è la bevanda spagnola più famosa, a base di vino e frutta.',
-                '��️ Giusto! I pasti individuali NON sono inclusi nella cassa comune.',
-                '���� Corretto! "Gracias" significa "grazie" in spagnolo.',
-                '🌡️ Esatto! Dicembre a Madrid è freddo: 5-10°C di giorno, porta il cappotto!',
-                '🖼️ Perfetto! Il Museo del Prado è uno dei musei d\'arte più importanti al mondo.',
-                '💶 Giusto! La Spagna usa l\'Euro dal 2002, quando ha sostituito la peseta.',
-                '🌳 Corretto! Il Parco del Retiro è il polmone verde di Madrid, perfetto per passeggiate.',
-                '🛍️ Esatto! La Gran Via è la strada dello shopping e dell\'intrattenimento di Madrid.',
-                '🙏 Perfetto! "Por favor" significa "per favore" in spagnolo.',
-                '🥔 Giusto! Le patatas bravas sono le tapas più iconiche, con salsa piccante.',
-                '🥓 Corretto! Il jamón ibérico è il prosciutto spagnolo pregiato, famoso in tutto il mondo.',
-                '🍇 Perfetto! Ogni chicco rappresenta un mese dell\'anno per portare fortuna!',
-                '⚽ Esatto! Il Real Madrid è una delle squadre di calcio più titolate al mondo.',
-                '🍫 Giusto! San Ginés è nel centro di Madrid, aperto dal 1894, aperto 24/7!',
-                '🎨 Corretto! Picasso ha un museo importante a Madrid, oltre a quello di Barcellona.',
-                '🎨 Perfetto! Malasaña è il quartiere più alternativo e trendy di Madrid.'
-            ];
-            
-            let score = 0;
-            let result = '';
-            let detailedResults = '';
-
-            for (let i = 1; i <= 25; i++) {
-                const selected = document.querySelector(`input[name="q${i}"]:checked`);
-                if (selected && selected.value === answers[i-1]) {
-                    score++;
-                    detailedResults += `<div class="text-xs text-green-600 mb-1">✅ Domanda ${i}: ${comments[i-1]}</div>`;
-                } else if (selected) {
-                    detailedResults += `<div class="text-xs text-red-500 mb-1">❌ Domanda ${i}: Risposta sbagliata. ${comments[i-1]}</div>`;
-                } else {
-                    detailedResults += `<div class="text-xs text-gray-500 mb-1">⚪ Domanda ${i}: Non risposta. ${comments[i-1]}</div>`;
-                }
-            }
-
-            if (score >= 23) {
-                result = '🎉 Incredibile! ' + score + '/25 - Sei un vero esperto WeRoad e di Madrid!';
-            } else if (score >= 20) {
-                result = '👏 Ottimo! ' + score + '/25 - Conosci molto bene WeRoad e Madrid!';
-            } else if (score >= 17) {
-                result = '👍 Bene! ' + score + '/25 - Hai una buona conoscenza di base!';
-            } else if (score >= 12) {
-                result = '📖 ' + score + '/25 - Studia un po\' di più prima del viaggio!';
-            } else {
-                result = '📚 ' + score + '/25 - Hai bisogno di ripassare WeRoad e Madrid!';
-            }
-
-            document.getElementById('quiz-result').innerHTML = `
-                <div class="bg-white p-3 rounded border">
-                    <div class="font-medium mb-2">${result}</div>
-                    <div class="max-h-48 overflow-y-auto border-t pt-2">
-                        ${detailedResults}
-                    </div>
-                </div>
-            `;
-        }
-
-        // Chiudi modal cliccando fuori
-        document.getElementById('modal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeModal();
-            }
-        });
-    </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9a7b9189827bed50',t:'MTc2NDY4NjMxMi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
-</html>
