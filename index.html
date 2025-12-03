@@ -57,21 +57,21 @@
         <div class="max-w-md mx-auto mb-6">
             <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-4">
                 <p class="text-sm text-center text-gray-700 mb-3 font-medium">Partenza tra:</p>
-                <div class="flex justify-center space-x-3">
+                <div id="countdown-display" class="flex justify-center space-x-3">
                     <div class="text-center">
-                        <div id="days" class="text-2xl font-bold text-gray-900">00</div>
+                        <div class="text-2xl font-bold text-gray-900"><span id="countdown-days">00</span></div>
                         <div class="text-xs text-gray-600 uppercase tracking-wide">Giorni</div>
                     </div>
                     <div class="text-center">
-                        <div id="hours" class="text-2xl font-bold text-gray-900">00</div>
+                        <div class="text-2xl font-bold text-gray-900"><span id="countdown-hours">00</span></div>
                         <div class="text-xs text-gray-600 uppercase tracking-wide">Ore</div>
                     </div>
                     <div class="text-center">
-                        <div id="minutes" class="text-2xl font-bold text-gray-900">00</div>
+                        <div class="text-2xl font-bold text-gray-900"><span id="countdown-minutes">00</span></div>
                         <div class="text-xs text-gray-600 uppercase tracking-wide">Min</div>
                     </div>
                     <div class="text-center">
-                        <div id="seconds" class="text-2xl font-bold text-gray-900">00</div>
+                        <div class="text-2xl font-bold text-gray-900"><span id="countdown-seconds">00</span></div>
                         <div class="text-xs text-gray-600 uppercase tracking-wide">Sec</div>
                     </div>
                 </div>
@@ -81,6 +81,14 @@
         <!-- Main Grid -->
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 max-w-4xl mx-auto mb-6">
             
+            <!-- Info WeRoad -->
+            <div class="card-minimal rounded-lg p-4 cursor-pointer" onclick="openSection('weroad')">
+                <div class="text-center flex flex-col items-center justify-center h-full">
+                    <div class="text-3xl mb-2">🌍</div>
+                    <h3 class="text-sm font-medium text-gray-700">INFO WEROAD</h3>
+                </div>
+            </div>
+
             <!-- Itinerario -->
             <div class="card-minimal rounded-lg p-4 cursor-pointer" onclick="openSection('itinerario')">
                 <div class="text-center flex flex-col items-center justify-center h-full">
@@ -121,14 +129,6 @@
                 </div>
             </div>
 
-            <!-- Guida Madrid -->
-            <div class="card-minimal rounded-lg p-4 cursor-pointer" onclick="openSection('guida')">
-                <div class="text-center flex flex-col items-center justify-center h-full">
-                    <div class="text-3xl mb-2">📖</div>
-                    <h3 class="text-sm font-medium text-gray-700">GUIDA MADRID</h3>
-                </div>
-            </div>
-
             <!-- Info Utili -->
             <div class="card-minimal rounded-lg p-4 cursor-pointer" onclick="openSection('info-utili')">
                 <div class="text-center flex flex-col items-center justify-center h-full">
@@ -150,14 +150,6 @@
                 <div class="text-center flex flex-col items-center justify-center h-full">
                     <div class="text-3xl mb-2">🚨</div>
                     <h3 class="text-sm font-medium text-gray-700">EMERGENCY KIT</h3>
-                </div>
-            </div>
-
-            <!-- Info WeRoad -->
-            <div class="card-minimal rounded-lg p-4 cursor-pointer" onclick="openSection('weroad')">
-                <div class="text-center flex flex-col items-center justify-center h-full">
-                    <div class="text-3xl mb-2">🌍</div>
-                    <h3 class="text-sm font-medium text-gray-700">INFO WEROAD</h3>
                 </div>
             </div>
 
@@ -226,20 +218,6 @@
         <!-- Mappa Google Maps -->
         <div class="mb-6">
             <div class="card-minimal rounded-lg overflow-hidden max-w-4xl mx-auto">
-                <div class="bg-gray-50 p-3 border-b border-gray-200">
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center">
-                            <span class="text-lg mr-2">🗺️</span>
-                            <h3 class="text-sm font-medium text-gray-700">Punti di Interesse</h3>
-                        </div>
-                        <a href="https://www.google.com/maps/d/u/2/edit?mid=18TKOKv39aRHS0WhEHWDU6El-zeM4_Qk&usp=sharing" 
-                           target="_blank" 
-                           rel="noopener noreferrer" 
-                           class="text-xs bg-gray-700 text-white px-3 py-1 rounded hover:bg-gray-800 transition-colors">
-                            Apri in Google Maps
-                        </a>
-                    </div>
-                </div>
                 <div class="h-64 md:h-80">
                     <iframe src="https://www.google.com/maps/d/u/2/embed?mid=18TKOKv39aRHS0WhEHWDU6El-zeM4_Qk&ehbc=2E312F" 
                             width="100%" 
@@ -379,31 +357,46 @@
         }
 
         // Countdown Timer
-        function updateCountdown() {
+        function startCountdown() {
             const targetDate = new Date('2024-12-30T15:00:00').getTime();
-            const now = new Date().getTime();
-            const distance = targetDate - now;
+            
+            function updateCountdown() {
+                const now = new Date().getTime();
+                const distance = targetDate - now;
 
-            if (distance > 0) {
-                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                if (distance > 0) {
+                    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-                document.getElementById('days').textContent = String(days).padStart(2, '0');
-                document.getElementById('hours').textContent = String(hours).padStart(2, '0');
-                document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
-                document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
-            } else {
-                document.getElementById('days').textContent = '00';
-                document.getElementById('hours').textContent = '00';
-                document.getElementById('minutes').textContent = '00';
-                document.getElementById('seconds').textContent = '00';
+                    const daysEl = document.getElementById('countdown-days');
+                    const hoursEl = document.getElementById('countdown-hours');
+                    const minutesEl = document.getElementById('countdown-minutes');
+                    const secondsEl = document.getElementById('countdown-seconds');
+
+                    if (daysEl) daysEl.textContent = String(days).padStart(2, '0');
+                    if (hoursEl) hoursEl.textContent = String(hours).padStart(2, '0');
+                    if (minutesEl) minutesEl.textContent = String(minutes).padStart(2, '0');
+                    if (secondsEl) secondsEl.textContent = String(seconds).padStart(2, '0');
+                } else {
+                    const daysEl = document.getElementById('countdown-days');
+                    const hoursEl = document.getElementById('countdown-hours');
+                    const minutesEl = document.getElementById('countdown-minutes');
+                    const secondsEl = document.getElementById('countdown-seconds');
+
+                    if (daysEl) daysEl.textContent = '00';
+                    if (hoursEl) hoursEl.textContent = '00';
+                    if (minutesEl) minutesEl.textContent = '00';
+                    if (secondsEl) secondsEl.textContent = '00';
+                }
             }
+
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
         }
 
-        updateCountdown();
-        setInterval(updateCountdown, 1000);
+        startCountdown();
 
         // Carica meteo all'avvio
         loadWeather();
@@ -538,7 +531,7 @@
                                     </div>
                                 </div>
                                 <div class="flex items-start">
-                                    <span class="mr-2">����</span>
+                                    <span class="mr-2">🍫</span>
                                     <div>
                                         <strong>Churros y chocolate da San Ginés</strong>
                                         <p class="text-xs text-gray-600">Il brunch/merenda perfetto dopo la festa (aperto 24/7!)</p>
@@ -567,6 +560,125 @@
                                 </div>
                             </div>
                         </div>
+
+                        <div class="bg-gradient-to-r from-red-50 to-yellow-50 p-3 rounded-lg mt-4">
+                            <h4 class="font-medium text-gray-800 mb-2 text-center">📖 GUIDA MADRID</h4>
+                        </div>
+
+                        <div class="bg-gradient-to-r from-red-50 to-yellow-50 p-3 rounded-lg">
+                            <h4 class="font-medium text-gray-800 mb-2">🏛️ Storia di Madrid</h4>
+                            <p class="text-sm text-gray-700 mb-2">Madrid divenne capitale della Spagna nel 1561 sotto il re Filippo II, trasformandosi da piccolo borgo medievale nella maestosa capitale che conosciamo oggi. Il Palazzo Reale, costruito nel XVIII secolo sulle rovine dell'antico Alcázar moresco, testimonia secoli di storia reale spagnola.</p>
+                            <p class="text-sm text-gray-700">Durante il Secolo d'Oro (XVI-XVII secolo), Madrid fiorì come centro culturale, attirando artisti del calibro di Velázquez e Goya, le cui opere oggi decorano il celebre Museo del Prado.</p>
+                        </div>
+
+                        <div class="bg-blue-50 p-3 rounded-lg">
+                            <h4 class="font-medium text-gray-800 mb-2">🎨 Cultura & Arte</h4>
+                            <p class="text-sm text-gray-700 mb-2"><strong>Il Triangolo d'Oro dell'Arte:</strong></p>
+                            <ul class="text-sm space-y-1 text-gray-600 mb-2">
+                                <li>🖼️ <strong>Museo del Prado:</strong> Capolavori di Velázquez, Goya, El Greco, Bosch</li>
+                                <li>🎭 <strong>Museo Reina Sofía:</strong> Arte moderna e contemporanea, Guernica di Picasso</li>
+                                <li>🏛️ <strong>Museo Thyssen-Bornemisza:</strong> Dalla pittura medievale all'avanguardia</li>
+                            </ul>
+                            <p class="text-sm text-gray-700"><strong>Flamenco:</strong> Madrid è uno dei centri principali per il flamenco, arte andalusa patrimonio UNESCO che combina canto, chitarra e danza passionale.</p>
+                        </div>
+
+                        <div class="bg-green-50 p-3 rounded-lg">
+                            <h4 class="font-medium text-gray-800 mb-2">🍷 Gastronomia Madrilena</h4>
+                            <ul class="text-sm space-y-2 text-gray-700">
+                                <li><strong>🥘 Cocido Madrileño:</strong> Piatto tradizionale invernale con ceci, carne e verdure</li>
+                                <li><strong>🍞 Bocadillo de Calamares:</strong> Panino con anelli di calamari fritti, un must a Plaza Mayor</li>
+                                <li><strong>🍫 Churros con Chocolate:</strong> Colazione/merenda tipica da gustare alla Chocolatería San Ginés (dal 1894!)</li>
+                                <li><strong>🥓 Jamón Ibérico:</strong> Il pregiato prosciutto spagnolo di maiale iberico</li>
+                                <li><strong>🍷 Vermouth:</strong> L'aperitivo domenicale per eccellenza nei bar tradizionali</li>
+                                <li><strong>🍤 Tapas:</strong> Patatas bravas, croquetas, gambas al ajillo, pimientos de padrón</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-purple-50 p-3 rounded-lg">
+                            <h4 class="font-medium text-gray-800 mb-2">🏘️ Quartieri Caratteristici</h4>
+                            <div class="space-y-2 text-sm text-gray-700">
+                                <div>
+                                    <strong>🎨 Malasaña:</strong> Quartiere hipster, vintage shops, street art, vita notturna alternativa. Centro della Movida Madrileña degli anni '80.
+                                </div>
+                                <div>
+                                    <strong>🌈 Chueca:</strong> Quartiere LGBTQ+, trendy, boutique alla moda, ristoranti innovativi, atmosfera vivace e inclusiva.
+                                </div>
+                                <div>
+                                    <strong>🍷 La Latina:</strong> Tapas bar storici, mercato del Rastro (domenica), atmosfera autentica madrilena, vicoli medievali.
+                                </div>
+                                <div>
+                                    <strong>💎 Salamanca:</strong> Quartiere elegante, shopping di lusso, architettura del XIX secolo, ristoranti gourmet.
+                                </div>
+                                <div>
+                                    <strong>🏛️ Centro/Sol-Gran Vía:</strong> Cuore storico, Plaza Mayor, Puerta del Sol, shopping, monumenti, turismo.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-orange-50 p-3 rounded-lg">
+                            <h4 class="font-medium text-gray-800 mb-2">🎭 Tradizioni & Feste</h4>
+                            <ul class="text-sm space-y-1 text-gray-700">
+                                <li><strong>🍇 Nochevieja (31 dic):</strong> 12 chicchi d'uva a mezzanotte in Puerta del Sol per 12 mesi di fortuna</li>
+                                <li><strong>🎊 San Isidro (15 maggio):</strong> Festa del patrono di Madrid, chulapos e chulapas in abiti tradizionali</li>
+                                <li><strong>🌈 Orgullo (giugno-luglio):</strong> Uno dei pride più grandi d'Europa</li>
+                                <li><strong>🎪 Verbenas:</strong> Feste di quartiere estive con musica, ballo e cibo di strada</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-yellow-50 p-3 rounded-lg">
+                            <h4 class="font-medium text-gray-800 mb-2">🌳 Parchi & Spazi Verdi</h4>
+                            <ul class="text-sm space-y-1 text-gray-700">
+                                <li><strong>🌳 Parque del Retiro:</strong> 125 ettari, Palacio de Cristal, lago con barche, ex giardino reale</li>
+                                <li><strong>🌺 Jardines de Sabatini:</strong> Giardini neoclassici accanto al Palazzo Reale</li>
+                                <li><strong>🌲 Casa de Campo:</strong> Parco enorme (1.722 ettari), perfetto per escursioni e pic-nic</li>
+                                <li><strong>🌹 Real Jardín Botánico:</strong> Giardino botanico storico vicino al Prado</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-red-50 p-3 rounded-lg">
+                            <h4 class="font-medium text-gray-800 mb-2">⚽ Calcio & Sport</h4>
+                            <p class="text-sm text-gray-700 mb-2">Madrid è casa di due squadre storiche: <strong>Real Madrid</strong> (Santiago Bernabéu) e <strong>Atlético Madrid</strong> (Cívitas Metropolitano). Il calcio è passione, identità e orgoglio cittadino!</p>
+                            <p class="text-sm text-gray-700">Il Real Madrid è uno dei club più titolati della storia con 14 Champions League. Il derby "El Derbi Madrileño" è uno degli eventi sportivi più sentiti della città.</p>
+                        </div>
+
+                        <div class="bg-pink-50 p-3 rounded-lg">
+                            <h4 class="font-medium text-gray-800 mb-2">🌙 Vita Notturna</h4>
+                            <p class="text-sm text-gray-700 mb-2">Madrid ha una delle vite notturne più vibranti d'Europa. Gli spagnoli cenano tardi (21:00-23:00) e la notte inizia dopo mezzanotte!</p>
+                            <ul class="text-sm space-y-1 text-gray-700">
+                                <li><strong>🍷 22:00-00:00:</strong> Aperitivo e tapas nei bar</li>
+                                <li><strong>🎵 00:00-03:00:</strong> Cocktail bar e locali con musica live</li>
+                                <li><strong>💃 03:00-06:00:</strong> Discoteche e club (molti aprono solo a quest'ora!)</li>
+                                <li><strong>🍫 06:00:</strong> Churros da San Ginés per chiudere la notte</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-gray-50 p-3 rounded-lg">
+                            <h4 class="font-medium text-gray-800 mb-2">💡 Curiosità su Madrid</h4>
+                            <ul class="text-sm space-y-1 text-gray-700">
+                                <li>🐻 Il simbolo di Madrid è un orso che si alza su un corbezzolo (Puerta del Sol)</li>
+                                <li>🌍 Madrid è la capitale europea più alta (650m sul livello del mare)</li>
+                                <li>📏 Il "Kilometro Zero" (punto da cui si misurano tutte le distanze in Spagna) è in Puerta del Sol</li>
+                                <li>☀️ Madrid ha più di 300 giorni di sole l'anno</li>
+                                <li>🎬 La Gran Vía è chiamata "Broadway spagnola" per teatri e musical</li>
+                                <li>👑 Il Palazzo Reale ha 3.418 stanze (più di Versailles e Buckingham Palace!)</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-indigo-50 p-3 rounded-lg">
+                            <h4 class="font-medium text-gray-800 mb-2">🗣️ Frasi Utili in Spagnolo</h4>
+                            <ul class="text-sm space-y-1 text-gray-700">
+                                <li><strong>Hola</strong> - Ciao</li>
+                                <li><strong>Gracias / De nada</strong> - Grazie / Prego</li>
+                                <li><strong>Por favor</strong> - Per favore</li>
+                                <li><strong>¿Cuánto cuesta?</strong> - Quanto costa?</li>
+                                <li><strong>La cuenta, por favor</strong> - Il conto, per favore</li>
+                                <li><strong>¿Dónde está...?</strong> - Dove si trova...?</li>
+                                <li><strong>No entiendo</strong> - Non capisco</li>
+                                <li><strong>¡Feliz Año Nuevo!</strong> - Buon Anno!</li>
+                                <li><strong>¡Qué rico!</strong> - Che buono!</li>
+                                <li><strong>Una caña, por favor</strong> - Una birra alla spina, per favore</li>
+                            </ul>
+                        </div>
                     </div>
                 `
             },
@@ -579,7 +691,7 @@
                             <ul class="text-sm space-y-1 text-gray-600">
                                 <li>🆔 Carta d'identità valida per l'espatrio o Passaporto</li>
                                 <li>🏥 Tessera sanitaria europea</li>
-                                <li>���� Copia dei documenti (anche solo digitale)</li>
+                                <li>📄 Copia dei documenti (anche solo digitale)</li>
                             </ul>
                         </div>
                         <div class="bg-gray-50 p-3 rounded-lg">
@@ -628,14 +740,13 @@
                             <p class="text-sm text-gray-700 mb-2">La cassa comune è un piccolo tesoro che mettiamo insieme per coprire quelle attività e servizi che non sono inclusi nel pacchetto standard del viaggio. 🏝️</p>
                             <div class="bg-white p-2 rounded-lg mt-2 mb-2">
                                 <p class="text-sm text-gray-800 font-medium mb-1">💰 Importo:</p>
-                                <p class="text-sm text-gray-700"><strong>85€</strong></p>
+                                <p class="text-sm text-gray-700"><strong>95€</strong></p>
                             </div>
                             <div class="bg-yellow-50 border border-yellow-300 p-2 rounded-lg">
                                 <p class="text-sm text-gray-800 font-medium mb-1">📱 Modalità di Pagamento:</p>
                                 <p class="text-xs text-gray-700 mb-2">Poiché molte attività devono essere prenotate e pagate in anticipo, il pagamento va effettuato tramite:</p>
                                 <ul class="text-xs text-gray-700 space-y-1">
                                     <li>💳 <strong>PayPal:</strong> sabrina_coco@hotmail.it</li>
-                                    <li>��� <strong>Revolut:</strong> IT49M0760103200001067527116</li>
                                 </ul>
                             </div>
                             <div class="bg-blue-50 border border-blue-300 p-2 rounded-lg mt-2">
@@ -660,7 +771,7 @@
                         </div>
                         
                         <div class="bg-gray-50 p-3 rounded-lg">
-                            <p class="text-sm text-gray-700 mb-3">Per questo tour, l'importo previsto per la cassa comune è di <strong>85 euro</strong>. Ma attenzione! Questa cifra potrebbe variare, a seconda delle attività che il gruppo deciderà di fare. La cassa comune serve a togliervi dal pensiero di pagare ogni giorno per ogni cosa. Il coordinatore se ne occupa, così vi rilassate e godete l'avventura! ��</p>
+                            <p class="text-sm text-gray-700 mb-3">Per questo tour, l'importo previsto per la cassa comune è di <strong>95 euro</strong>. Ma attenzione! Questa cifra potrebbe variare, a seconda delle attività che il gruppo deciderà di fare. La cassa comune serve a togliervi dal pensiero di pagare ogni giorno per ogni cosa. Il coordinatore se ne occupa, così vi rilassate e godete l'avventura! 🎉</p>
                         </div>
 
                         <div class="bg-green-50 p-3 rounded-lg">
@@ -702,7 +813,7 @@
                                     </div>
                                 </li>
                                 <li>☕ <strong>Colazioni</strong> (non incluse)</li>
-                                <li>�� <strong>Eventuali taxi</strong> (se preferiti alla metro)</li>
+                                <li>🚕 <strong>Eventuali taxi</strong> (se preferiti alla metro)</li>
                                 <li>🍽️ <strong>Cena della seconda sera</strong> (31 dicembre)</li>
                             </ul>
                         </div>
@@ -842,127 +953,6 @@
                     </div>
                 `
             },
-            'guida': {
-                title: '📖 Guida Madrid',
-                content: `
-                    <div class="space-y-3 max-h-[70vh] overflow-y-auto">
-                        <div class="bg-gradient-to-r from-red-50 to-yellow-50 p-3 rounded-lg">
-                            <h4 class="font-medium text-gray-800 mb-2">🏛️ Storia di Madrid</h4>
-                            <p class="text-sm text-gray-700 mb-2">Madrid divenne capitale della Spagna nel 1561 sotto il re Filippo II, trasformandosi da piccolo borgo medievale nella maestosa capitale che conosciamo oggi. Il Palazzo Reale, costruito nel XVIII secolo sulle rovine dell'antico Alcázar moresco, testimonia secoli di storia reale spagnola.</p>
-                            <p class="text-sm text-gray-700">Durante il Secolo d'Oro (XVI-XVII secolo), Madrid fiorì come centro culturale, attirando artisti del calibro di Velázquez e Goya, le cui opere oggi decorano il celebre Museo del Prado.</p>
-                        </div>
-
-                        <div class="bg-blue-50 p-3 rounded-lg">
-                            <h4 class="font-medium text-gray-800 mb-2">🎨 Cultura & Arte</h4>
-                            <p class="text-sm text-gray-700 mb-2"><strong>Il Triangolo d'Oro dell'Arte:</strong></p>
-                            <ul class="text-sm space-y-1 text-gray-600 mb-2">
-                                <li>🖼️ <strong>Museo del Prado:</strong> Capolavori di Velázquez, Goya, El Greco, Bosch</li>
-                                <li>🎭 <strong>Museo Reina Sofía:</strong> Arte moderna e contemporanea, Guernica di Picasso</li>
-                                <li>🏛️ <strong>Museo Thyssen-Bornemisza:</strong> Dalla pittura medievale all'avanguardia</li>
-                            </ul>
-                            <p class="text-sm text-gray-700"><strong>Flamenco:</strong> Madrid è uno dei centri principali per il flamenco, arte andalusa patrimonio UNESCO che combina canto, chitarra e danza passionale.</p>
-                        </div>
-
-                        <div class="bg-green-50 p-3 rounded-lg">
-                            <h4 class="font-medium text-gray-800 mb-2">🍷 Gastronomia Madrilena</h4>
-                            <ul class="text-sm space-y-2 text-gray-700">
-                                <li><strong>🥘 Cocido Madrileño:</strong> Piatto tradizionale invernale con ceci, carne e verdure</li>
-                                <li><strong>🍞 Bocadillo de Calamares:</strong> Panino con anelli di calamari fritti, un must a Plaza Mayor</li>
-                                <li><strong>🍫 Churros con Chocolate:</strong> Colazione/merenda tipica da gustare alla Chocolatería San Ginés (dal 1894!)</li>
-                                <li><strong>🥓 Jamón Ibérico:</strong> Il pregiato prosciutto spagnolo di maiale iberico</li>
-                                <li><strong>🍷 Vermouth:</strong> L'aperitivo domenicale per eccellenza nei bar tradizionali</li>
-                                <li><strong>🍤 Tapas:</strong> Patatas bravas, croquetas, gambas al ajillo, pimientos de padrón</li>
-                            </ul>
-                        </div>
-
-                        <div class="bg-purple-50 p-3 rounded-lg">
-                            <h4 class="font-medium text-gray-800 mb-2">🏘️ Quartieri Caratteristici</h4>
-                            <div class="space-y-2 text-sm text-gray-700">
-                                <div>
-                                    <strong>🎨 Malasaña:</strong> Quartiere hipster, vintage shops, street art, vita notturna alternativa. Centro della Movida Madrileña degli anni '80.
-                                </div>
-                                <div>
-                                    <strong>🌈 Chueca:</strong> Quartiere LGBTQ+, trendy, boutique alla moda, ristoranti innovativi, atmosfera vivace e inclusiva.
-                                </div>
-                                <div>
-                                    <strong>🍷 La Latina:</strong> Tapas bar storici, mercato del Rastro (domenica), atmosfera autentica madrilena, vicoli medievali.
-                                </div>
-                                <div>
-                                    <strong>💎 Salamanca:</strong> Quartiere elegante, shopping di lusso, architettura del XIX secolo, ristoranti gourmet.
-                                </div>
-                                <div>
-                                    <strong>🏛️ Centro/Sol-Gran Vía:</strong> Cuore storico, Plaza Mayor, Puerta del Sol, shopping, monumenti, turismo.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="bg-orange-50 p-3 rounded-lg">
-                            <h4 class="font-medium text-gray-800 mb-2">🎭 Tradizioni & Feste</h4>
-                            <ul class="text-sm space-y-1 text-gray-700">
-                                <li><strong>🍇 Nochevieja (31 dic):</strong> 12 chicchi d'uva a mezzanotte in Puerta del Sol per 12 mesi di fortuna</li>
-                                <li><strong>🎊 San Isidro (15 maggio):</strong> Festa del patrono di Madrid, chulapos e chulapas in abiti tradizionali</li>
-                                <li><strong>🌈 Orgullo (giugno-luglio):</strong> Uno dei pride più grandi d'Europa</li>
-                                <li><strong>🎪 Verbenas:</strong> Feste di quartiere estive con musica, ballo e cibo di strada</li>
-                            </ul>
-                        </div>
-
-                        <div class="bg-yellow-50 p-3 rounded-lg">
-                            <h4 class="font-medium text-gray-800 mb-2">🌳 Parchi & Spazi Verdi</h4>
-                            <ul class="text-sm space-y-1 text-gray-700">
-                                <li><strong>🌳 Parque del Retiro:</strong> 125 ettari, Palacio de Cristal, lago con barche, ex giardino reale</li>
-                                <li><strong>🌺 Jardines de Sabatini:</strong> Giardini neoclassici accanto al Palazzo Reale</li>
-                                <li><strong>🌲 Casa de Campo:</strong> Parco enorme (1.722 ettari), perfetto per escursioni e pic-nic</li>
-                                <li><strong>🌹 Real Jardín Botánico:</strong> Giardino botanico storico vicino al Prado</li>
-                            </ul>
-                        </div>
-
-                        <div class="bg-red-50 p-3 rounded-lg">
-                            <h4 class="font-medium text-gray-800 mb-2">⚽ Calcio & Sport</h4>
-                            <p class="text-sm text-gray-700 mb-2">Madrid è casa di due squadre storiche: <strong>Real Madrid</strong> (Santiago Bernabéu) e <strong>Atlético Madrid</strong> (Cívitas Metropolitano). Il calcio è passione, identità e orgoglio cittadino!</p>
-                            <p class="text-sm text-gray-700">Il Real Madrid è uno dei club più titolati della storia con 14 Champions League. Il derby "El Derbi Madrileño" è uno degli eventi sportivi più sentiti della città.</p>
-                        </div>
-
-                        <div class="bg-pink-50 p-3 rounded-lg">
-                            <h4 class="font-medium text-gray-800 mb-2">🌙 Vita Notturna</h4>
-                            <p class="text-sm text-gray-700 mb-2">Madrid ha una delle vite notturne più vibranti d'Europa. Gli spagnoli cenano tardi (21:00-23:00) e la notte inizia dopo mezzanotte!</p>
-                            <ul class="text-sm space-y-1 text-gray-700">
-                                <li><strong>🍷 22:00-00:00:</strong> Aperitivo e tapas nei bar</li>
-                                <li><strong>🎵 00:00-03:00:</strong> Cocktail bar e locali con musica live</li>
-                                <li><strong>💃 03:00-06:00:</strong> Discoteche e club (molti aprono solo a quest'ora!)</li>
-                                <li><strong>🍫 06:00:</strong> Churros da San Ginés per chiudere la notte</li>
-                            </ul>
-                        </div>
-
-                        <div class="bg-gray-50 p-3 rounded-lg">
-                            <h4 class="font-medium text-gray-800 mb-2">💡 Curiosità su Madrid</h4>
-                            <ul class="text-sm space-y-1 text-gray-700">
-                                <li>🐻 Il simbolo di Madrid è un orso che si alza su un corbezzolo (Puerta del Sol)</li>
-                                <li>🌍 Madrid è la capitale europea più alta (650m sul livello del mare)</li>
-                                <li>📏 Il "Kilometro Zero" (punto da cui si misurano tutte le distanze in Spagna) è in Puerta del Sol</li>
-                                <li>☀️ Madrid ha più di 300 giorni di sole l'anno</li>
-                                <li>🎬 La Gran Vía è chiamata "Broadway spagnola" per teatri e musical</li>
-                                <li>👑 Il Palazzo Reale ha 3.418 stanze (più di Versailles e Buckingham Palace!)</li>
-                            </ul>
-                        </div>
-
-                        <div class="bg-indigo-50 p-3 rounded-lg">
-                            <h4 class="font-medium text-gray-800 mb-2">🗣️ Frasi Utili in Spagnolo</h4>
-                            <ul class="text-sm space-y-1 text-gray-700">
-                                <li><strong>Hola</strong> - Ciao</li>
-                                <li><strong>Gracias / De nada</strong> - Grazie / Prego</li>
-                                <li><strong>Por favor</strong> - Per favore</li>
-                                <li><strong>¿Cuánto cuesta?</strong> - Quanto costa?</li>
-                                <li><strong>La cuenta, por favor</strong> - Il conto, per favore</li>
-                                <li><strong>¿Dónde está...?</strong> - Dove si trova...?</li>
-                                <li><strong>No entiendo</strong> - Non capisco</li>
-                                <li><strong>¡Feliz Año Nuevo!</strong> - Buon Anno!</li>
-                                <li><strong>¡Qué rico!</strong> - Che buono!</li>
-                                <li><strong>Una caña, por favor</strong> - Una birra alla spina, per favore</li>
-                            </ul>
-                        </div>
-                    </div>
-                `
-            },
             'emergency': {
                 title: '🚨 Emergency Kit',
                 content: `
@@ -997,7 +987,7 @@
                 `
             },
             'faq': {
-                title: '❓ FAQ',
+                title: '��� FAQ',
                 content: `
                     <div class="space-y-3 max-h-96 overflow-y-auto">
                         <div class="bg-blue-50 p-3 rounded-lg">
@@ -1017,7 +1007,7 @@
                         </div>
                         <div class="border-l-4 border-gray-300 pl-3">
                             <h4 class="font-medium mb-1">Come spostarsi dall'aeroporto al centro?</h4>
-                            <p class="text-sm text-gray-600">Hai diverse opzioni: Metro Linea 8 (circa 5€), Express Airport Bus (5��, ferma a Cibeles e Atocha), Taxi (30€ tariffa fissa), Uber/Cabify (25-40€). ✈️<br><strong>📋 Vedi la sezione "Info Utili" per tutti i dettagli completi su orari, fermate e consigli!</strong></p>
+                            <p class="text-sm text-gray-600">Hai diverse opzioni: Metro Linea 8 (circa 5€), Express Airport Bus (5€, ferma a Cibeles e Atocha), Taxi (30€ tariffa fissa), Uber/Cabify (25-40€). ✈️<br><strong>📋 Vedi la sezione "Info Utili" per tutti i dettagli completi su orari, fermate e consigli!</strong></p>
                         </div>
                         <div class="border-l-4 border-gray-300 pl-3">
                             <h4 class="font-medium mb-1">Che tempo farà a Capodanno?</h4>
@@ -1235,7 +1225,7 @@
                 content: `
                     <div class="space-y-3">
                         <div class="bg-gray-50 p-3 rounded-lg">
-                            <h4 class="font-medium text-gray-800 mb-2">�� Prima volta con WeRoad?</h4>
+                            <h4 class="font-medium text-gray-800 mb-2">🎒 Prima volta con WeRoad?</h4>
                             <p class="text-sm text-gray-700 mb-3">Allora ti sarà utile sapere come funziona e cosa aspettarti:</p>
                             <p class="text-sm text-gray-700 mb-3">Da queste parti ci piace conoscere il luogo, ma anche la gente che ci accompagna, che darà un sapore particolare e unico all'itinerario: ogni viaggio è diverso, ma anche ogni gruppo lo è! 🌍💬 Anche il coordinatore è uno di voi, un compagno di viaggio. Ben lontano dall'essere una guida a Madrid, sono tanto gasata quanto voi, con la differenza che WeRoad mi fornisce tutti gli strumenti per farvi passare un weekend indimenticabile e al tempo stesso farvi dimenticare di tutto il resto. 🙋</p>
                             <p class="text-sm text-gray-700"><strong>Questo è lo spirito WeRoad, ma se hai ancora domande... sai dove trovarmi! 😊📞</strong></p>
