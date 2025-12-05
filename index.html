@@ -423,3 +423,165 @@
                                     <span class="mr-2">💃</span>
                                     <div>
                                         <strong>Spettacolo di flamenco</strong>
+                                        
+<script>
+  // === Configurazione città ===
+  const CITY_NAME = "Madrid, Spain";
+  const LAT = 40.4168;
+  const LON = -3.7038;
+
+  // === Selettori ===
+  const elLoading = document.getElementById("weather-loading");
+  const elContent = document.getElementById("weather-content");
+  const elDays = document.getElementById("weather-days");
+  const elError = document.getElementById("weather-error");
+  const elAdvice = document.getElementById("weather-advice");
+
+  // === Mappa codici meteo Open-Meteo -> icone/emote + descrizioni ===
+  // Riferimento: https://open-meteo.com/en/docs#weathervariables
+  const weatherCodeMap = [
+    { codes: [0], icon: "☀️", desc: "Sereno" },
+    { codes: [1], icon: "🌤️", desc: "Prevalenza di sole" },
+    { codes: [2], icon: "⛅", desc: "Parzialmente nuvoloso" },
+    { codes: [3], icon: "☁️", desc: "Nuvoloso" },
+    { codes: [45, 48], icon: "🌫️", desc: "Nebbia" },
+    { codes: [51, 53, 55], icon: "🌦️", desc: "Pioviggine" },
+    { codes: [61, 63, 65], icon: "🌧️", desc: "Pioggia" },
+    { codes: [66, 67], icon: "🌨️", desc: "Neve gelata" },
+    { codes: [71, 73, 75], icon: "❄️", desc: "Neve" },
+    { codes: [77], icon: "🌨️", desc: "Cristalli di ghiaccio" },
+    { codes: [80, 81, 82], icon: "⛈️", desc: "Rovesci" },
+    { codes: [85, 86], icon: "❄️", desc: "Rovesci di neve" },
+    { codes: [95], icon: "⛈️", desc: "Temporale" },
+    { codes: [96, 99], icon: "⛈️", desc: "Temporale con grandine" },
+  ];
+
+  function codeToIconDesc(code) {
+    const found = weatherCodeMap.find(m => m.codes.includes(code));
+    return found || { icon: "🌡️", desc: "Variabile" };
+  }
+
+  // === Utilità ===
+  function formatDateISOToIT(isoDate) {
+    // isoDate es. "2025-12-05"
+    const d = new Date(isoDate + "T00:00:00");
+    const weekdays = ["Dom", "Lun", "Mar", "Mer", "Gio", "Ven", "Sab"];
+    const day = weekdays[d.getDay()];
+    const dd = String(d.getDate()).padStart(2, "0");
+    const mm = String(d.getMonth() + 1).padStart(2, "0");
+    return `${day} ${dd}/${mm}`;
+  }
+
+  function calcAdvice(dailyMax, dailyMin) {
+    // Ritorna oggetti testuali per consigli giorno/sera/scarpe
+    let giorno, sera, scarpe;
+
+    if (dailyMax >= 30) {
+      giorno = "Abbigliamento leggero, tessuti traspiranti";
+      sera = "Maglia leggera, idratazione";
+      scarpe = "Sandali ok, meglio traspiranti";
+    } else if (dailyMax >= 22) {
+      giorno = "T-shirt + pantaloni leggeri";
+      sera = "Felpa leggera o giacca sottile";
+      scarpe = "Sneakers o scarpe leggere";
+    } else if (dailyMax >= 15) {
+      giorno = "Maglioncino o camicia + giacca leggera";
+      sera = "Giacca più calda";
+      scarpe = "Scarpe chiuse comode";
+    } else if (dailyMax >= 10) {
+      giorno = "Maglione e giacca; strati consigliati";
+      sera = "Cappotto medio e sciarpa";
+      scarpe = "Scarpe chiuse, calzini caldi";
+    } else if (dailyMax >= 5) {
+      giorno = "Cappotto pesante, maglione";
+      sera = "Cappotto + sciarpa + guanti";
+      scarpe = "Scarpe chiuse, NO sandali";
+    } else {
+      giorno = "Termica + cappotto pesante";
+      sera = "Cappotto, guanti, sciarpa, berretto";
+      scarpe = "Scarponcini, suola antiscivolo";
+    }
+
+    // Raffreddamento notturno: se min <= 2°C, enfatizza protezione
+    if (dailyMin <= 2) {
+      sera += " (molto freddo, strati extra)";
+      scarpe = "Scarponcini caldi, suola antiscivolo";
+    }
+
+    return { giorno, sera, scarpe };
+  }
+
+  // === Rendering cards giorno ===
+  function renderDays(daily) {
+    elDays.innerHTML = "";
+    const { time, weathercode, temperature_2m_max, temperature_2m_min } = daily;
+
+    time.forEach((dateStr, i) => {
+      const { icon, desc } = codeToIconDesc(weathercode[i]);
+      const max = Math.round(temperature_2m_max[i]);
+      const min = Math.round(temperature_2m_min[i]);
+
+      const card = document.createElement("div");
+      card.className = "bg-white p-3 rounded-lg text-center border border-gray-200";
+      card.innerHTML = `
+        <p class="text-xs text-gray-500 mb-1">${formatDateISOToIT(dateStr)}</p>
+        <div class="text-3xl mb-1">${icon}</div>
+        <p class="text-lg font-medium text-gray-800">${max}°C <span class="text-xs text-gray-500">/ ${min}°C</span></p>
+        <p class="text-xs text-gray-500">${desc}</p>
+      `;
+      elDays.appendChild(card);
+    });
+  }
+
+  // === Rendering consigli abbigliamento (primo giorno come riferimento) ===
+  function renderAdvice(daily) {
+    const max = Math.round(daily.temperature_2m_max[0]);
+    const min = Math.round(daily.temperature_2m_min[0]);
+    const a = calcAdvice(max, min);
+
+    elAdvice.innerHTML = `
+      <div>🌞 <strong>Giorno:</strong> ${a.giorno} (${max}°C)</div>
+      <div>🌙 <strong>Sera:</strong> ${a.sera} (${min}°C)</div>
+      <div>👟 <strong>Scarpe:</strong> ${a.scarpe}</div>
+    `;
+  }
+
+  // === Fetch meteo da Open-Meteo ===
+  async function fetchWeather() {
+    const url = new URL("https://api.open-meteo.com/v1/forecast");
+    url.searchParams.set("latitude", LAT);
+    url.searchParams.set("longitude", LON);
+    url.searchParams.set("daily", "weathercode,temperature_2m_max,temperature_2m_min");
+    url.searchParams.set("timezone", "auto"); // usa automaticamente la timezone locale dell'utente
+    url.searchParams.set("forecast_days", "7"); // 7 giorni
+
+    try {
+      elLoading.classList.remove("hidden");
+      elContent.classList.add("hidden");
+      elError.classList.add("hidden");
+
+      const res = await fetch(url.toString(), { cache: "no-store" });
+      if (!res.ok) throw new Error("HTTP " + res.status);
+      const data = await res.json();
+
+      if (!data?.daily?.time?.length) throw new Error("Dati non disponibili");
+
+      renderDays(data.daily);
+      renderAdvice(data.daily);
+
+      elLoading.classList.add("hidden");
+      elContent.classList.remove("hidden");
+    } catch (err) {
+      console.error("Weather error:", err);
+      elLoading.classList.add("hidden");
+      elContent.classList.add("hidden");
+      elError.classList.remove("hidden");
+    }
+  }
+
+  // === Auto-refresh ogni 30 minuti ===
+  const REFRESH_MS = 30 * 60 * 1000;
+  fetchWeather();                 // prima chiamata
+  setInterval(fetchWeather, REFRESH_MS); // aggiornamenti automatici
+</script>
+
