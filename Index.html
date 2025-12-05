@@ -1,0 +1,1207 @@
+<!doctype html>
+<html lang="it">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Capodanno a Madrid - Hub Viaggio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+  <style>
+        body {
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .card-minimal {
+            background: white;
+            border: 1px solid #e5e7eb;
+            transition: all 0.2s ease;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card-minimal:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            border-color: #d1d5db;
+        }
+        
+        .section-title {
+            color: #374151;
+        }
+        
+        .text-muted {
+            color: #6b7280;
+        }
+    </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="/_sdk/element_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="min-h-full" style="background: linear-gradient(to bottom, #f9fafb, #f3f4f6, #e5e7eb);"><!-- Header con immagine -->
+  <div class="w-full mb-4">
+   <div class="relative h-48 md:h-64 overflow-hidden"><img src="https://c.pxhere.com/photos/ee/a5/sky_palace_glass_architecture_ceiling_museum_ceilings_real_estate-1117682.jpg!d" alt="Madrid Capodanno" class="w-full h-full object-cover" onerror="this.src=''; this.alt='Immagine non disponibile'; this.style.display='none';">
+    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-black/20 flex items-end justify-center pb-6">
+     <div class="text-center text-white">
+      <h1 class="text-xl md:text-2xl font-bold mb-1 uppercase tracking-wide">CAPODANNO A MADRID 🎉</h1>
+      <p class="text-xs opacity-90 uppercase tracking-wide">30 DICEMBRE - 1 GENNAIO 2025</p>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="container mx-auto px-4 py-4"><!-- Countdown -->
+   <div class="mb-6">
+    <div class="card-minimal rounded-lg overflow-hidden max-w-md mx-auto p-4 text-center">
+     <div id="countdown" class="flex justify-center gap-2 text-center">
+      <div class="card-minimal rounded-lg p-2 min-w-[60px]">
+       <div id="days" class="text-2xl font-bold text-gray-800">
+        00
+       </div>
+       <div class="text-xs uppercase mt-1 text-gray-600">
+        Giorni
+       </div>
+      </div>
+      <div class="card-minimal rounded-lg p-2 min-w-[60px]">
+       <div id="hours" class="text-2xl font-bold text-gray-800">
+        00
+       </div>
+       <div class="text-xs uppercase mt-1 text-gray-600">
+        Ore
+       </div>
+      </div>
+      <div class="card-minimal rounded-lg p-2 min-w-[60px]">
+       <div id="minutes" class="text-2xl font-bold text-gray-800">
+        00
+       </div>
+       <div class="text-xs uppercase mt-1 text-gray-600">
+        Minuti
+       </div>
+      </div>
+      <div class="card-minimal rounded-lg p-2 min-w-[60px]">
+       <div id="seconds" class="text-2xl font-bold text-gray-800">
+        00
+       </div>
+       <div class="text-xs uppercase mt-1 text-gray-600">
+        Secondi
+       </div>
+      </div>
+     </div>
+    </div>
+   </div><!-- Main Grid -->
+   <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 max-w-4xl mx-auto mb-6"><!-- Info WeRoad -->
+    <div class="card-minimal rounded-lg p-4 cursor-pointer" onclick="openSection('weroad')">
+     <div class="text-center flex flex-col items-center justify-center h-full">
+      <div class="text-3xl mb-2">
+       🌍
+      </div>
+      <h3 class="text-sm font-medium text-gray-700">INFO WEROAD</h3>
+     </div>
+    </div><!-- Itinerario -->
+    <div class="card-minimal rounded-lg p-4 cursor-pointer" onclick="openSection('itinerario')">
+     <div class="text-center flex flex-col items-center justify-center h-full">
+      <div class="text-3xl mb-2">
+       🗺️
+      </div>
+      <h3 class="text-sm font-medium text-gray-700">ITINERARIO</h3>
+     </div>
+    </div><!-- Cosa Portare -->
+    <div class="card-minimal rounded-lg p-4 cursor-pointer" onclick="openSection('cosa-portare')">
+     <div class="text-center flex flex-col items-center justify-center h-full">
+      <div class="text-3xl mb-2">
+       🎒
+      </div>
+      <h3 class="text-sm font-medium text-gray-700">COSA PORTARE</h3>
+     </div>
+    </div><!-- Spese -->
+    <div class="card-minimal rounded-lg p-4 cursor-pointer" onclick="openSection('spese')">
+     <div class="text-center flex flex-col items-center justify-center h-full">
+      <div class="text-3xl mb-2">
+       💰
+      </div>
+      <h3 class="text-sm font-medium text-gray-700">SPESE</h3>
+     </div>
+    </div><!-- Foto -->
+    <div class="card-minimal rounded-lg p-4 cursor-pointer" onclick="openSection('foto')">
+     <div class="text-center flex flex-col items-center justify-center h-full">
+      <div class="text-3xl mb-2">
+       📸
+      </div>
+      <h3 class="text-sm font-medium text-gray-700">FOTO</h3>
+     </div>
+    </div><!-- Info Utili -->
+    <div class="card-minimal rounded-lg p-4 cursor-pointer" onclick="openSection('info-utili')">
+     <div class="text-center flex flex-col items-center justify-center h-full">
+      <div class="text-3xl mb-2">
+       📋
+      </div>
+      <h3 class="text-sm font-medium text-gray-700">INFO UTILI</h3>
+     </div>
+    </div><!-- FAQ -->
+    <div class="card-minimal rounded-lg p-4 cursor-pointer" onclick="openSection('faq')">
+     <div class="text-center flex flex-col items-center justify-center h-full">
+      <div class="text-3xl mb-2">
+       ❓
+      </div>
+      <h3 class="text-sm font-medium text-gray-700">FAQ</h3>
+     </div>
+    </div><!-- Emergency Kit -->
+    <div class="card-minimal rounded-lg p-4 cursor-pointer" onclick="openSection('emergency')">
+     <div class="text-center flex flex-col items-center justify-center h-full">
+      <div class="text-3xl mb-2">
+       🚨
+      </div>
+      <h3 class="text-sm font-medium text-gray-700">EMERGENCY KIT</h3>
+     </div>
+    </div>
+   </div><!-- Mappa Google Maps -->
+   <div class="mb-6 max-w-4xl mx-auto">
+    <div class="h-64 md:h-80 rounded-lg overflow-hidden shadow-sm"><iframe src="https://www.google.com/maps/d/u/2/embed?mid=18TKOKv39aRHS0WhEHWDU6El-zeM4_Qk&amp;ehbc=2E312F" width="100%" height="100%" style="border:0;" allowfullscreen loading="lazy"> </iframe>
+    </div>
+   </div><!-- Link Utili -->
+   <div class="mb-6">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-3 max-w-4xl mx-auto"><a href="https://www.esmadrid.com" target="_blank" rel="noopener noreferrer" class="card-minimal rounded-lg p-4">
+      <div class="flex items-center"><span class="text-2xl mr-3">🏛️</span>
+       <div>
+        <h4 class="font-medium text-gray-700 text-sm">ESMADRID</h4>
+        <p class="text-xs text-gray-500">Turismo ufficiale</p>
+       </div>
+      </div></a> <a href="https://www.weroad.it/viaggi/madrid-weekend-weroadx" target="_blank" rel="noopener noreferrer" class="card-minimal rounded-lg p-4">
+      <div class="flex items-center"><span class="text-2xl mr-3">🌍</span>
+       <div>
+        <h4 class="font-medium text-gray-700 text-sm">WEROAD</h4>
+        <p class="text-xs text-gray-500">Il nostro tour</p>
+       </div>
+      </div></a> <a href="https://consmadrid.esteri.it" target="_blank" rel="noopener noreferrer" class="card-minimal rounded-lg p-4">
+      <div class="flex items-center"><span class="text-2xl mr-3">🇮🇹</span>
+       <div>
+        <h4 class="font-medium text-gray-700 text-sm">CONSOLATO</h4>
+        <p class="text-xs text-gray-500">Consolato Italia</p>
+       </div>
+      </div></a>
+    </div>
+   </div>
+  </div><!-- Modal per le sezioni -->
+  <div id="modal" class="fixed inset-0 bg-black/50 hidden items-center justify-center z-50 p-4">
+   <div class="card-minimal rounded-lg max-w-2xl w-full max-h-[90%] overflow-hidden">
+    <div class="p-4">
+     <div class="flex justify-between items-center mb-4">
+      <h2 id="modal-title" class="text-lg font-semibold text-gray-900"></h2><button onclick="closeModal()" class="text-gray-400 hover:text-gray-600 text-2xl">×</button>
+     </div>
+     <div id="modal-content" class="text-gray-600 overflow-y-auto max-h-[70vh] text-sm"><!-- Il contenuto verrà inserito qui -->
+     </div>
+    </div>
+   </div>
+  </div><!-- Modal per Canva Dettagli Cassa Comune -->
+  <div id="canva-modal" class="fixed inset-0 bg-black/50 hidden items-center justify-center z-50 p-4">
+   <div class="card-minimal rounded-lg max-w-3xl w-full max-h-[90%] overflow-hidden">
+    <div class="p-4">
+     <div class="flex justify-between items-center mb-4">
+      <h2 class="text-lg font-semibold text-gray-900">📊 Dettagli Cassa Comune Madrid</h2><button onclick="closeCanvaModal()" class="text-gray-400 hover:text-gray-600 text-2xl">×</button>
+     </div>
+     <div class="overflow-y-auto max-h-[75vh]">
+      <div style="position: relative; width: 100%; height: 0; padding-top: 100.0000%; padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-bottom: 0.9em; overflow: hidden; border-radius: 8px; will-change: transform;"><iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0; margin: 0;" src="https://www.canva.com/design/DAG5CNBegwA/nTzhWr5WpEfthx7V-Blv6A/view?embed" allowfullscreen allow="fullscreen"> </iframe>
+      </div>
+      <div class="text-center text-xs text-gray-600"><a href="https://www.canva.com/design/DAG5CNBegwA/nTzhWr5WpEfthx7V-Blv6A/view?utm_content=DAG5CNBegwA&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener" class="text-blue-600 hover:underline"> Cassa Comune Madrid - Dettaglio </a> di Sabrina Coco
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <script>
+        // Countdown Timer
+        function updateCountdown() {
+            // Data target: 30 dicembre 2025 ore 00:00:00
+            const targetDate = new Date('2025-12-30T00:00:00').getTime();
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            if (distance < 0) {
+                document.getElementById('days').textContent = '00';
+                document.getElementById('hours').textContent = '00';
+                document.getElementById('minutes').textContent = '00';
+                document.getElementById('seconds').textContent = '00';
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = String(days).padStart(2, '0');
+            document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+            document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+        }
+
+        // Avvia countdown quando il DOM è pronto
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', function() {
+                updateCountdown();
+                setInterval(updateCountdown, 1000);
+            });
+        } else {
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+        }
+
+        const sections = {
+            'itinerario': {
+                title: '🗺️ Itinerario',
+                content: `
+                    <div class="space-y-3">
+                        <div class="bg-blue-50 border-l-4 border-blue-400 p-3 rounded-lg">
+                            <h4 class="font-medium text-gray-800 mb-2">📅 Programma Madrid Capodanno 2025</h4>
+                            <p class="text-sm text-gray-700">Tre giorni indimenticabili nella capitale spagnola! 🎉</p>
+                        </div>
+
+                        <div class="bg-white border-l-4 border-orange-400 p-3 rounded-lg">
+                            <div class="flex items-center mb-2">
+                                <span class="text-2xl mr-2">1️⃣</span>
+                                <h4 class="font-medium text-gray-800">Lunedì 30 Dicembre</h4>
+                            </div>
+                            <div class="space-y-2 text-sm text-gray-700">
+                                <div class="flex items-start">
+                                    <span class="mr-2">🏨</span>
+                                    <div>
+                                        <strong>Check-in e primo incontro</strong>
+                                        <p class="text-xs text-gray-600">Ci conosciamo in hotel e inizia l'avventura!</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <span class="mr-2">🚶</span>
+                                    <div>
+                                        <strong>Giro del centro di Madrid</strong>
+                                        <p class="text-xs text-gray-600">Plaza Mayor, Puerta del Sol, Palazzo Reale e dintorni</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <span class="mr-2">🥘</span>
+                                    <div>
+                                        <strong>Paella per cena</strong>
+                                        <p class="text-xs text-gray-600">Il piatto spagnolo più iconico tutti insieme!</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <span class="mr-2">🎉</span>
+                                    <div>
+                                        <strong>Vita notturna madrilena</strong>
+                                        <p class="text-xs text-gray-600">Scopriamo i locali e l'energia della notte di Madrid</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white border-l-4 border-red-400 p-3 rounded-lg">
+                            <div class="flex items-center mb-2">
+                                <span class="text-2xl mr-2">2️⃣</span>
+                                <h4 class="font-medium text-gray-800">Martedì 31 Dicembre - CAPODANNO 🎊</h4>
+                            </div>
+                            <div class="space-y-2 text-sm text-gray-700">
+                                <div class="flex items-start">
+                                    <span class="mr-2">🏰</span>
+                                    <div>
+                                        <strong>Escursione a Toledo</strong>
+                                        <p class="text-xs text-gray-600">La città delle tre culture, patrimonio UNESCO</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <span class="mr-2">🔙</span>
+                                    <div>
+                                        <strong>Rientro in hotel nel pomeriggio</strong>
+                                        <p class="text-xs text-gray-600">Tempo per prepararsi per la grande notte!</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <span class="mr-2">💃</span>
+                                    <div>
+                                        <strong>Spettacolo di flamenco</strong>
+                                        <p class="text-xs text-gray-600">L'arte spagnola per eccellenza dal vivo</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <span class="mr-2">🍽️</span>
+                                    <div>
+                                        <strong>Cena pre-Capodanno</strong>
+                                        <p class="text-xs text-gray-600">Tutti insieme per prepararci ai festeggiamenti</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <span class="mr-2">🍇</span>
+                                    <div>
+                                        <strong>Campanadas in Puerta del Sol</strong>
+                                        <p class="text-xs text-gray-600">I 12 rintocchi + 12 chicchi d'uva = 12 mesi di fortuna! 🎉</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white border-l-4 border-green-400 p-3 rounded-lg">
+                            <div class="flex items-center mb-2">
+                                <span class="text-2xl mr-2">3️⃣</span>
+                                <h4 class="font-medium text-gray-800">Mercoledì 1 Gennaio - Day After (opzionale)</h4>
+                            </div>
+                            <div class="bg-yellow-50 p-2 rounded mb-2">
+                                <p class="text-xs text-gray-700">✨ <strong>Il weekend WeRoad si conclude con il check-out, ma per chi rimane c'è ancora tanto da vedere!</strong></p>
+                            </div>
+                            <div class="space-y-2 text-sm text-gray-700">
+                                <p class="font-medium text-gray-800 mb-1">Attività consigliate:</p>
+                                <div class="flex items-start">
+                                    <span class="mr-2">🚴</span>
+                                    <div>
+                                        <strong>Parque del Retiro in e-bike</strong>
+                                        <p class="text-xs text-gray-600">Giro rilassato nel polmone verde di Madrid</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <span class="mr-2">🎨</span>
+                                    <div>
+                                        <strong>Tour dei quartieri caratteristici</strong>
+                                        <p class="text-xs text-gray-600">Malasaña, Chueca, La Latina: l'anima autentica di Madrid</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <span class="mr-2">🌉</span>
+                                    <div>
+                                        <strong>Madrid Río e Puente de Segovia</strong>
+                                        <p class="text-xs text-gray-600">La Madrid moderna lungo il fiume, perfetto per una passeggiata</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <span class="mr-2">🛍️</span>
+                                    <div>
+                                        <strong>Shopping sulla Gran Vía</strong>
+                                        <p class="text-xs text-gray-600">La "Broadway spagnola" per gli ultimi acquisti</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <span class="mr-2">🍩</span>
+                                    <div>
+                                        <strong>Churros y chocolate da San Ginés</strong>
+                                        <p class="text-xs text-gray-600">Il brunch/merenda perfetto dopo la festa (aperto 24/7!)</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <span class="mr-2">🖼️</span>
+                                    <div>
+                                        <strong>Museo del Prado o Reina Sofía</strong>
+                                        <p class="text-xs text-gray-600">Velázquez, Goya, Picasso: arte da capogiro</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <span class="mr-2">🍷</span>
+                                    <div>
+                                        <strong>Mercato di San Miguel</strong>
+                                        <p class="text-xs text-gray-600">Tapas gourmet e atmosfera vivace</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <span class="mr-2">⚽</span>
+                                    <div>
+                                        <strong>Stadio Santiago Bernabéu</strong>
+                                        <p class="text-xs text-gray-600">Tour dello stadio del Real Madrid (per i tifosi!)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-gradient-to-r from-red-50 to-yellow-50 p-3 rounded-lg mt-4">
+                            <h4 class="font-medium text-gray-800 mb-2 text-center">📖 GUIDA MADRID</h4>
+                        </div>
+
+                        <div class="bg-gradient-to-r from-red-50 to-yellow-50 p-3 rounded-lg">
+                            <h4 class="font-medium text-gray-800 mb-2">🏛️ Storia di Madrid</h4>
+                            <p class="text-sm text-gray-700 mb-2">Madrid divenne capitale della Spagna nel 1561 sotto il re Filippo II, trasformandosi da piccolo borgo medievale nella maestosa capitale che conosciamo oggi. Il Palazzo Reale, costruito nel XVIII secolo sulle rovine dell'antico Alcázar moresco, testimonia secoli di storia reale spagnola.</p>
+                            <p class="text-sm text-gray-700">Durante il Secolo d'Oro (XVI-XVII secolo), Madrid fiorì come centro culturale, attirando artisti del calibro di Velázquez e Goya, le cui opere oggi decorano il celebre Museo del Prado.</p>
+                        </div>
+
+                        <div class="bg-blue-50 p-3 rounded-lg">
+                            <h4 class="font-medium text-gray-800 mb-2">🎨 Cultura & Arte</h4>
+                            <p class="text-sm text-gray-700 mb-2"><strong>Il Triangolo d'Oro dell'Arte:</strong></p>
+                            <ul class="text-sm space-y-1 text-gray-600 mb-2">
+                                <li>🖼️ <strong>Museo del Prado:</strong> Capolavori di Velázquez, Goya, El Greco, Bosch</li>
+                                <li>🎭 <strong>Museo Reina Sofía:</strong> Arte moderna e contemporanea, Guernica di Picasso</li>
+                                <li>🏛️ <strong>Museo Thyssen-Bornemisza:</strong> Dalla pittura medievale all'avanguardia</li>
+                            </ul>
+                            <p class="text-sm text-gray-700"><strong>Flamenco:</strong> Madrid è uno dei centri principali per il flamenco, arte andalusa patrimonio UNESCO che combina canto, chitarra e danza passionale.</p>
+                        </div>
+
+                        <div class="bg-green-50 p-3 rounded-lg">
+                            <h4 class="font-medium text-gray-800 mb-2">🍷 Gastronomia Madrilena</h4>
+                            <ul class="text-sm space-y-2 text-gray-700">
+                                <li><strong>🥘 Cocido Madrileño:</strong> Piatto tradizionale invernale con ceci, carne e verdure</li>
+                                <li><strong>🍞 Bocadillo de Calamares:</strong> Panino con anelli di calamari fritti, un must a Plaza Mayor</li>
+                                <li><strong>🍫 Churros con Chocolate:</strong> Colazione/merenda tipica da gustare alla Chocolatería San Ginés (dal 1894!)</li>
+                                <li><strong>🥓 Jamón Ibérico:</strong> Il pregiato prosciutto spagnolo di maiale iberico</li>
+                                <li><strong>🍷 Vermouth:</strong> L'aperitivo domenicale per eccellenza nei bar tradizionali</li>
+                                <li><strong>🍤 Tapas:</strong> Patatas bravas, croquetas, gambas al ajillo, pimientos de padrón</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-purple-50 p-3 rounded-lg">
+                            <h4 class="font-medium text-gray-800 mb-2">🏘️ Quartieri Caratteristici</h4>
+                            <div class="space-y-2 text-sm text-gray-700">
+                                <div>
+                                    <strong>🎨 Malasaña:</strong> Quartiere hipster, vintage shops, street art, vita notturna alternativa. Centro della Movida Madrileña degli anni '80.
+                                </div>
+                                <div>
+                                    <strong>🌈 Chueca:</strong> Quartiere LGBTQ+, trendy, boutique alla moda, ristoranti innovativi, atmosfera vivace e inclusiva.
+                                </div>
+                                <div>
+                                    <strong>🍷 La Latina:</strong> Tapas bar storici, mercato del Rastro (domenica), atmosfera autentica madrilena, vicoli medievali.
+                                </div>
+                                <div>
+                                    <strong>💎 Salamanca:</strong> Quartiere elegante, shopping di lusso, architettura del XIX secolo, ristoranti gourmet.
+                                </div>
+                                <div>
+                                    <strong>🏛️ Centro/Sol-Gran Vía:</strong> Cuore storico, Plaza Mayor, Puerta del Sol, shopping, monumenti, turismo.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-orange-50 p-3 rounded-lg">
+                            <h4 class="font-medium text-gray-800 mb-2">🎭 Tradizioni & Feste</h4>
+                            <ul class="text-sm space-y-1 text-gray-700">
+                                <li><strong>🍇 Nochevieja (31 dic):</strong> 12 chicchi d'uva a mezzanotte in Puerta del Sol per 12 mesi di fortuna</li>
+                                <li><strong>🎊 San Isidro (15 maggio):</strong> Festa del patrono di Madrid, chulapos e chulapas in abiti tradizionali</li>
+                                <li><strong>🏳️‍🌈 Orgullo (giugno-luglio):</strong> Uno dei pride più grandi d'Europa</li>
+                                <li><strong>🎪 Verbenas:</strong> Feste di quartiere estive con musica, ballo e cibo di strada</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-yellow-50 p-3 rounded-lg">
+                            <h4 class="font-medium text-gray-800 mb-2">🌳 Parchi & Spazi Verdi</h4>
+                            <ul class="text-sm space-y-1 text-gray-700">
+                                <li><strong>🌳 Parque del Retiro:</strong> 125 ettari, Palacio de Cristal, lago con barche, ex giardino reale</li>
+                                <li><strong>🌸 Jardines de Sabatini:</strong> Giardini neoclassici accanto al Palazzo Reale</li>
+                                <li><strong>🌲 Casa de Campo:</strong> Parco enorme (1.722 ettari), perfetto per escursioni e pic-nic</li>
+                                <li><strong>🌹 Real Jardín Botánico:</strong> Giardino botanico storico vicino al Prado</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-red-50 p-3 rounded-lg">
+                            <h4 class="font-medium text-gray-800 mb-2">⚽ Calcio & Sport</h4>
+                            <p class="text-sm text-gray-700 mb-2">Madrid è casa di due squadre storiche: <strong>Real Madrid</strong> (Santiago Bernabéu) e <strong>Atlético Madrid</strong> (Cívitas Metropolitano). Il calcio è passione, identità e orgoglio cittadino!</p>
+                            <p class="text-sm text-gray-700">Il Real Madrid è uno dei club più titolati della storia con 14 Champions League. Il derby "El Derbi Madrileño" è uno degli eventi sportivi più sentiti della città.</p>
+                        </div>
+
+                        <div class="bg-pink-50 p-3 rounded-lg">
+                            <h4 class="font-medium text-gray-800 mb-2">🌙 Vita Notturna</h4>
+                            <p class="text-sm text-gray-700 mb-2">Madrid ha una delle vite notturne più vibranti d'Europa. Gli spagnoli cenano tardi (21:00-23:00) e la notte inizia dopo mezzanotte!</p>
+                            <ul class="text-sm space-y-1 text-gray-700">
+                                <li><strong>🍷 22:00-00:00:</strong> Aperitivo e tapas nei bar</li>
+                                <li><strong>🎵 00:00-03:00:</strong> Cocktail bar e locali con musica live</li>
+                                <li><strong>💃 03:00-06:00:</strong> Discoteche e club (molti aprono solo a quest'ora!)</li>
+                                <li><strong>🍫 06:00:</strong> Churros da San Ginés per chiudere la notte</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-gray-50 p-3 rounded-lg">
+                            <h4 class="font-medium text-gray-800 mb-2">💡 Curiosità su Madrid</h4>
+                            <ul class="text-sm space-y-1 text-gray-700">
+                                <li>🐻 Il simbolo di Madrid è un orso che si alza su un corbezzolo (Puerta del Sol)</li>
+                                <li>⛰️ Madrid è la capitale europea più alta (650m sul livello del mare)</li>
+                                <li>📏 Il "Kilometro Zero" (punto da cui si misurano tutte le distanze in Spagna) è in Puerta del Sol</li>
+                                <li>☀️ Madrid ha più di 300 giorni di sole l'anno</li>
+                                <li>🎬 La Gran Vía è chiamata "Broadway spagnola" per teatri e musical</li>
+                                <li>👑 Il Palazzo Reale ha 3.418 stanze (più di Versailles e Buckingham Palace!)</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-indigo-50 p-3 rounded-lg">
+                            <h4 class="font-medium text-gray-800 mb-2">🗣️ Frasi Utili in Spagnolo</h4>
+                            <ul class="text-sm space-y-1 text-gray-700">
+                                <li><strong>Hola</strong> - Ciao</li>
+                                <li><strong>Gracias / De nada</strong> - Grazie / Prego</li>
+                                <li><strong>Por favor</strong> - Per favore</li>
+                                <li><strong>¿Cuánto cuesta?</strong> - Quanto costa?</li>
+                                <li><strong>La cuenta, por favor</strong> - Il conto, per favore</li>
+                                <li><strong>¿Dónde está...?</strong> - Dove si trova...?</li>
+                                <li><strong>No entiendo</strong> - Non capisco</li>
+                                <li><strong>¡Feliz Año Nuevo!</strong> - Buon Anno!</li>
+                                <li><strong>¡Qué rico!</strong> - Che buono!</li>
+                                <li><strong>Una caña, por favor</strong> - Una birra alla spina, per favore</li>
+                            </ul>
+                        </div>
+                    </div>
+                `
+            },
+            'cosa-portare': {
+                title: '🎒 Cosa Portare',
+                content: `
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                        <div class="bg-gray-50 p-3 rounded-lg">
+                            <h4 class="font-medium text-gray-800 mb-2">📄 Documenti Essenziali</h4>
+                            <ul class="text-sm space-y-1 text-gray-600">
+                                <li>🆔 Carta d'identità valida per l'espatrio o Passaporto</li>
+                                <li>🏥 Tessera sanitaria europea</li>
+                                <li>📄 Copia dei documenti (anche solo digitale)</li>
+                            </ul>
+                        </div>
+                        <div class="bg-gray-50 p-3 rounded-lg">
+                            <h4 class="font-medium text-gray-800 mb-2">👗 Abbigliamento Dicembre/Gennaio</h4>
+                            <ul class="text-sm space-y-1 text-gray-600">
+                                <li>👟 Scarpe comode da camminata (molto importante!)</li>
+                                <li>🧥 Cappotto o giacca pesante (5-10°C di giorno)</li>
+                                <li>🧶 Maglioni e felpe calde</li>
+                                <li>👖 Jeans o pantaloni lunghi</li>
+                                <li>🧣 Sciarpa, cappello e guanti</li>
+                            </ul>
+                        </div>
+                        <div class="bg-gray-50 p-3 rounded-lg">
+                            <h4 class="font-medium text-gray-800 mb-2">📱 Tecnologia & Elettronica</h4>
+                            <ul class="text-sm space-y-1 text-gray-600">
+                                <li>📱 Smartphone + caricabatterie</li>
+                                <li>🔋 Power bank portatile</li>
+                            </ul>
+                        </div>
+                        <div class="bg-gray-50 p-3 rounded-lg">
+                            <h4 class="font-medium text-gray-800 mb-2">🧴 Cura Personale & Salute</h4>
+                            <ul class="text-sm space-y-1 text-gray-600">
+                                <li>💊 Medicinali personali (se possibile con ricetta)</li>
+                                <li>🧴 Prodotti igiene personale</li>
+                            </ul>
+                        </div>
+                        <div class="bg-gray-50 p-3 rounded-lg">
+                            <h4 class="font-medium text-gray-800 mb-2">💶 Denaro & Pagamenti</h4>
+                            <ul class="text-sm space-y-1 text-gray-600">
+                                <li>💰 85€ per cassa comune (da pagare in anticipo)</li>
+                                <li>💳 Carta di credito/debito principale</li>
+                                <li>💳 Carta di backup</li>
+                                <li>💵 Contanti extra (capodanno costa!)</li>
+                                <li>👛 Portafoglio da viaggio sicuro</li>
+                            </ul>
+                        </div>
+                    </div>
+                `
+            },
+            'spese': {
+                title: '💰 Cassa Comune',
+                content: `
+                    <div class="space-y-3">
+                        <div class="bg-blue-50 border-l-4 border-blue-400 p-3 rounded-lg">
+                            <h4 class="font-medium text-gray-800 mb-2">💵 Importo Cassa Comune</h4>
+                            <p class="text-sm text-gray-700 mb-2">La cassa comune è un piccolo tesoro che mettiamo insieme per coprire quelle attività e servizi che non sono inclusi nel pacchetto standard del viaggio. 🏝️</p>
+                            <div class="bg-white p-2 rounded-lg mt-2 mb-2">
+                                <p class="text-sm text-gray-800 font-medium mb-1">💰 Importo:</p>
+                                <p class="text-sm text-gray-700"><strong>95€</strong></p>
+                            </div>
+                            <div class="bg-yellow-50 border border-yellow-300 p-2 rounded-lg">
+                                <p class="text-sm text-gray-800 font-medium mb-1">📱 Modalità di Pagamento:</p>
+                                <p class="text-xs text-gray-700 mb-2">Poiché molte attività devono essere prenotate e pagate in anticipo, il pagamento va effettuato tramite:</p>
+                                <ul class="text-xs text-gray-700 space-y-1">
+                                    <li>💳 <strong>PayPal:</strong> sabrina_coco@hotmail.it</li>
+                                </ul>
+                            </div>
+                            <div class="bg-blue-50 border border-blue-300 p-2 rounded-lg mt-2">
+                                <p class="text-xs text-gray-700">ℹ️ <strong>Nota Bene:</strong> Le attività della cassa comune sono facoltative. Potrai scegliere se partecipare o meno alle diverse esperienze proposte dal gruppo!</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-purple-50 border-l-4 border-purple-400 p-3 rounded-lg">
+                            <h4 class="font-medium text-gray-800 mb-2">🎉 Medias Puri - Discoteca Capodanno (Opzionale)</h4>
+                            <p class="text-sm text-gray-700 mb-2">Per chi vuole festeggiare il Capodanno nella famosa discoteca Medias Puri, è richiesto un pagamento separato:</p>
+                            <div class="bg-white p-2 rounded-lg mt-2 mb-2">
+                                <p class="text-sm text-gray-800 font-medium mb-1">💰 Importo:</p>
+                                <p class="text-sm text-gray-700"><strong>38€</strong></p>
+                            </div>
+                            <div class="bg-yellow-50 border border-yellow-300 p-2 rounded-lg">
+                                <p class="text-sm text-gray-800 font-medium mb-1">📱 Modalità di Pagamento:</p>
+                                <p class="text-xs text-gray-700 mb-2">Il pagamento va effettuato in anticipo tramite:</p>
+                                <ul class="text-xs text-gray-700 space-y-1">
+                                    <li>💳 <strong>PayPal:</strong> sabrina_coco@hotmail.it</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-3 rounded-lg">
+                            <p class="text-sm text-gray-700 mb-3">Per questo tour, l'importo previsto per la cassa comune è di <strong>95 euro</strong>. Ma attenzione! Questa cifra potrebbe variare, a seconda delle attività che il gruppo deciderà di fare. La cassa comune serve a togliervi dal pensiero di pagare ogni giorno per ogni cosa. Il coordinatore se ne occupa, così vi rilassate e godete l'avventura! 🎉</p>
+                        </div>
+
+                        <div class="bg-green-50 p-3 rounded-lg">
+                            <h4 class="font-medium text-gray-800 mb-2">✅ Cosa INCLUDE la cassa comune:</h4>
+                            <ul class="text-sm space-y-1 text-gray-600">
+                                <li>🎟️ Attività extra scelte dal gruppo (biglietti per musei, escursioni, passeggiate turistiche)</li>
+                                <li>🚗 Trasporti locali</li>
+                                <li>👏 Mance generali</li>
+                                <li>👤 La quota del coordinatore</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-red-50 p-3 rounded-lg">
+                            <h4 class="font-medium text-gray-800 mb-2">❌ Cosa NON è incluso nella cassa comune:</h4>
+                            <ul class="text-sm space-y-1 text-gray-600">
+                                <li>🍽️ Cibo o pasti, a meno che non si tratti di un menù fisso</li>
+                                <li>👥 Quando il gruppo si divide in sottogruppi per attività diverse</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-purple-50 p-3 rounded-lg">
+                            <h4 class="font-medium text-gray-800 mb-2">🎁 Cosa è già incluso nel tuo pacchetto WeRoad</h4>
+                            <ul class="text-sm space-y-1 text-gray-600">
+                                <li>🍷 Giro tapas a Toledo</li>
+                                <li>🥘 Cena di paella</li>
+                                <li>👥 Guida a Toledo</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-orange-50 p-3 rounded-lg">
+                            <h4 class="font-medium text-gray-800 mb-2">💳 Spese Extra da Considerare</h4>
+                            <ul class="text-sm space-y-2 text-gray-600">
+                                <li>
+                                    <strong>🚇 Metro/Trasporti:</strong>
+                                    <div class="ml-4 text-xs mt-1">
+                                        • Biglietto singolo: 1,50€ (5 stazioni) + 0,10€ per ogni stazione successiva (max 2€)<br>
+                                        • 10 biglietti: consigliato acquistare direttamente in aeroporto<br>
+                                        • Metro dall'aeroporto (Linea 8): +3€ di sovrapprezzo
+                                    </div>
+                                </li>
+                                <li>☕ <strong>Colazioni</strong> (non incluse)</li>
+                                <li>🚕 <strong>Eventuali taxi</strong> (se preferiti alla metro)</li>
+                                <li>🍽️ <strong>Cena della seconda sera</strong> (31 dicembre)</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-gray-50 p-3 rounded-lg text-center">
+                            <p class="text-sm text-gray-700 mb-3">Utilizzeremo Tricount per avere una visione chiara dell'uso della cassa comune, ma anche per eventuali altre spese e per i conti finali.</p>
+                            <div class="space-y-2">
+                                <button onclick="openCanvaDetails()" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors text-sm">
+                                    📊 Dettagli Cassa Comune
+                                </button>
+                                <br>
+                                <a href="https://tricount.com/tGWkjvwtmFILfOlzcv" target="_blank" rel="noopener noreferrer" class="inline-block bg-gray-700 text-white px-4 py-2 rounded-lg hover:bg-gray-800 transition-colors text-sm">
+                                    Clicca qui per visualizzare le spese su Tricount
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                `
+            },
+            'foto': {
+                title: '📸 Album Foto Condiviso',
+                content: `
+                    <div class="space-y-3">
+                        <div class="bg-gray-50 p-3 rounded-lg text-center">
+                            <h4 class="font-medium text-gray-800 mb-2">PhotoCircle</h4>
+                            <p class="text-sm text-gray-600 mb-3">Condividi tutte le foto del Capodanno a Madrid!</p>
+                            <a href="https://join.photocircleapp.com/DNABMC8XYM" target="_blank" rel="noopener noreferrer" class="inline-block bg-gray-700 text-white px-4 py-2 rounded-lg hover:bg-gray-800 transition-colors text-sm">
+                                Apri Album
+                            </a>
+                        </div>
+                    </div>
+                `
+            },
+            'playlist': {
+                title: '🎵 Playlist Condivisa',
+                content: `
+                    <div class="space-y-3">
+                        <div class="bg-gray-50 p-3 rounded-lg">
+                            <h4 class="font-medium text-gray-800 mb-2">🎶 Musica Spagnola</h4>
+                            <div class="space-y-2">
+                                <div class="bg-white border border-gray-200 rounded-lg p-3 hover:shadow-md hover:border-gray-300 transition-all">
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center">
+                                            <span class="text-lg mr-3">🎸</span>
+                                            <div>
+                                                <h5 class="font-medium text-gray-700 text-sm">Spanish Hits</h5>
+                                                <p class="text-xs text-gray-500">Le migliori hit spagnole</p>
+                                            </div>
+                                        </div>
+                                        <a href="https://open.spotify.com/playlist/37i9dQZF1DX8cH7oPLPu5p" target="_blank" rel="noopener noreferrer" class="bg-green-600 text-white px-3 py-1 rounded text-xs hover:bg-green-700 transition-colors">
+                                            Spotify
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="bg-white border border-gray-200 rounded-lg p-3 hover:shadow-md hover:border-gray-300 transition-all">
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center">
+                                            <span class="text-lg mr-3">💃</span>
+                                            <div>
+                                                <h5 class="font-medium text-gray-700 text-sm">Flamenco & Rumba</h5>
+                                                <p class="text-xs text-gray-500">Ritmi spagnoli tradizionali</p>
+                                            </div>
+                                        </div>
+                                        <a href="https://open.spotify.com/playlist/37i9dQZF1DWYxp9cWxWzKP" target="_blank" rel="noopener noreferrer" class="bg-green-600 text-white px-3 py-1 rounded text-xs hover:bg-green-700 transition-colors">
+                                            Spotify
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-gray-50 p-3 rounded-lg">
+                            <h4 class="font-medium text-gray-800 mb-2">✈️ Canzoni da Viaggio</h4>
+                            <div class="space-y-2">
+                                <div class="bg-white border border-gray-200 rounded-lg p-3 hover:shadow-md hover:border-gray-300 transition-all">
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center">
+                                            <span class="text-lg mr-3">🚗</span>
+                                            <div>
+                                                <h5 class="font-medium text-gray-700 text-sm">Road Trip Songs</h5>
+                                                <p class="text-xs text-gray-500">Perfette per il viaggio</p>
+                                            </div>
+                                        </div>
+                                        <a href="https://open.spotify.com/playlist/37i9dQZF1DX0XUsuxWHRQd" target="_blank" rel="noopener noreferrer" class="bg-blue-600 text-white px-3 py-1 rounded text-xs hover:bg-blue-700 transition-colors">
+                                            Spotify
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="bg-white border border-gray-200 rounded-lg p-3 hover:shadow-md hover:border-gray-300 transition-all">
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center">
+                                            <span class="text-lg mr-3">🌍</span>
+                                            <div>
+                                                <h5 class="font-medium text-gray-700 text-sm">Travel Vibes</h5>
+                                                <p class="text-xs text-gray-500">Atmosfere da viaggio</p>
+                                            </div>
+                                        </div>
+                                        <a href="https://open.spotify.com/playlist/37i9dQZF1DWTwnEm1IYyoj" target="_blank" rel="noopener noreferrer" class="bg-blue-600 text-white px-3 py-1 rounded text-xs hover:bg-blue-700 transition-colors">
+                                            Spotify
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-gray-50 p-3 rounded-lg">
+                            <h4 class="font-medium text-gray-800 mb-2">🎉 Party Capodanno</h4>
+                            <div class="space-y-2">
+                                <div class="bg-white border border-gray-200 rounded-lg p-3 hover:shadow-md hover:border-gray-300 transition-all">
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center">
+                                            <span class="text-lg mr-3">🔥</span>
+                                            <div>
+                                                <h5 class="font-medium text-gray-700 text-sm">Today's Top Hits</h5>
+                                                <p class="text-xs text-gray-500">Le hit di oggi</p>
+                                            </div>
+                                        </div>
+                                        <a href="https://open.spotify.com/playlist/37i9dQZF1DXcBWIGoYBM5M" target="_blank" rel="noopener noreferrer" class="bg-red-600 text-white px-3 py-1 rounded text-xs hover:bg-red-700 transition-colors">
+                                            Spotify
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="bg-white border border-gray-200 rounded-lg p-3 hover:shadow-md hover:border-gray-300 transition-all">
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center">
+                                            <span class="text-lg mr-3">🌎</span>
+                                            <div>
+                                                <h5 class="font-medium text-gray-700 text-sm">Global Top 50</h5>
+                                                <p class="text-xs text-gray-500">Top mondiale</p>
+                                            </div>
+                                        </div>
+                                        <a href="https://open.spotify.com/playlist/37i9dQZF1DX0XUfTFmNBRM" target="_blank" rel="noopener noreferrer" class="bg-red-600 text-white px-3 py-1 rounded text-xs hover:bg-red-700 transition-colors">
+                                            Spotify
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `
+            },
+            'emergency': {
+                title: '🚨 Emergency Kit',
+                content: `
+                    <div class="space-y-3">
+                        <div class="bg-gray-50 p-3 rounded-lg">
+                            <h4 class="font-medium text-gray-800 mb-2">📞 Numeri di Emergenza</h4>
+                            <ul class="text-sm space-y-1 text-gray-600">
+                                <li><strong>🆘 Emergenze generali:</strong> 112</li>
+                                <li><strong>👮 Polizia:</strong> 091</li>
+                                <li><strong>🚒 Vigili del Fuoco:</strong> 080</li>
+                                <li><strong>🚑 Ambulanza:</strong> 061</li>
+                                <li><strong>🗺️ Polizia Turistica:</strong> +34 915 48 85 37</li>
+                            </ul>
+                        </div>
+                        <div class="bg-gray-50 p-3 rounded-lg">
+                            <h4 class="font-medium text-gray-800 mb-2">🇮🇹 Consolato Italiano</h4>
+                            <ul class="text-sm space-y-1 text-gray-600">
+                                <li><strong>📍 Indirizzo:</strong> Calle Lagasca 98, Madrid</li>
+                                <li><strong>☎️ Tel:</strong> +34 915 76 83 40</li>
+                                <li><strong>🆘 Emergenze:</strong> +34 616 68 79 51</li>
+                            </ul>
+                        </div>
+                        <div class="bg-gray-50 p-3 rounded-lg">
+                            <h4 class="font-medium text-gray-800 mb-2">💊 Farmacie & Ospedali</h4>
+                            <ul class="text-sm space-y-1 text-gray-600">
+                                <li><strong>⏰ Farmacia 24h:</strong> Gran Via 46</li>
+                                <li><strong>🏥 Ospedale La Paz:</strong> +34 917 27 70 00</li>
+                                <li><strong>🔍 Farmacie di turno:</strong> www.cofm.es</li>
+                            </ul>
+                        </div>
+                    </div>
+                `
+            },
+            'faq': {
+                title: '❓ FAQ',
+                content: `
+                    <div class="space-y-3 max-h-96 overflow-y-auto">
+                        <div class="bg-blue-50 p-3 rounded-lg">
+                            <h4 class="font-medium text-blue-800 mb-2">🌍 Domande su WeRoad</h4>
+                        </div>
+                        <div class="border-l-4 border-blue-300 pl-3">
+                            <h4 class="font-medium mb-1">Come funziona un viaggio WeRoad?</h4>
+                            <p class="text-sm text-gray-600">Viaggi in piccoli gruppi (max 15 persone + 1 coordinatore) che vi accompagna e organizza le attività. È perfetto per chi vuole viaggiare in compagnia senza stress organizzativo! 👥</p>
+                        </div>
+                        <div class="border-l-4 border-blue-300 pl-3">
+                            <h4 class="font-medium mb-1">Cosa include il prezzo WeRoad?</h4>
+                            <p class="text-sm text-gray-600">Alloggio, coordinatore, alcune attività base. NON include voli, pasti, cassa comune (85€) e attività extra. 💰</p>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-3 rounded-lg">
+                            <h4 class="font-medium text-gray-800 mb-2">🎉 Domande su Madrid</h4>
+                        </div>
+                        <div class="border-l-4 border-gray-300 pl-3">
+                            <h4 class="font-medium mb-1">Come spostarsi dall'aeroporto al centro?</h4>
+                            <p class="text-sm text-gray-600">Hai diverse opzioni: Metro Linea 8 (circa 5€), Express Airport Bus (5€, ferma a Cibeles e Atocha), Taxi (30€ tariffa fissa), Uber/Cabify (25-40€). ✈️<br><strong>📋 Vedi la sezione "Info Utili" per tutti i dettagli completi su orari, fermate e consigli!</strong></p>
+                        </div>
+                        <div class="border-l-4 border-gray-300 pl-3">
+                            <h4 class="font-medium mb-1">Che tempo farà a Capodanno?</h4>
+                            <p class="text-sm text-gray-600">Freddo! (5-10°C di giorno, 0-5°C di notte). Porta cappotto pesante, sciarpa e guanti. La sera di Capodanno può essere gelida! ❄️</p>
+                        </div>
+                        <div class="border-l-4 border-gray-300 pl-3">
+                            <h4 class="font-medium mb-1">Come funziona la tradizione dei 12 chicchi?</h4>
+                            <p class="text-sm text-gray-600">A mezzanotte, mangia 1 chicco d'uva per ogni rintocco dell'orologio in Puerta del Sol. Ogni chicco porta fortuna per un mese del nuovo anno! 🍇</p>
+                        </div>
+                        <div class="border-l-4 border-gray-300 pl-3">
+                            <h4 class="font-medium mb-1">Che valuta si usa?</h4>
+                            <p class="text-sm text-gray-600">Euro (€). Carte accettate ovunque, ma porta contanti per tapas bar e mercatini. ATM disponibili in tutta la città. 💶</p>
+                        </div>
+                        <div class="border-l-4 border-gray-300 pl-3">
+                            <h4 class="font-medium mb-1">Quanto costa mediamente un pasto?</h4>
+                            <p class="text-sm text-gray-600">Tapas bar: 10-15€, ristorante medio: 20-30€, menù del día: 12-15€. Attenzione: Capodanno costa di più! 🍽️</p>
+                        </div>
+                        <div class="border-l-4 border-gray-300 pl-3">
+                            <h4 class="font-medium mb-1">Come muoversi a Madrid?</h4>
+                            <p class="text-sm text-gray-600">Metro efficientissimo (biglietto 1,50-2€), centro storico a piedi. La notte di Capodanno metro aperto tutta notte GRATIS! 🚇</p>
+                        </div>
+                        <div class="border-l-4 border-gray-300 pl-3">
+                            <h4 class="font-medium mb-1">Cosa comprare come souvenir?</h4>
+                            <p class="text-sm text-gray-600">Jamón ibérico, turron, ventaglio spagnolo, prodotti Real Madrid/Atlético, ceramiche. El Rastro (mercato domenicale) per vintage! 🎁</p>
+                        </div>
+                        <div class="border-l-4 border-gray-300 pl-3">
+                            <h4 class="font-medium mb-1">È sicura Madrid?</h4>
+                            <p class="text-sm text-gray-600">Molto sicura. Attenzione ai borseggiatori in metro e Puerta del Sol, specialmente a Capodanno con la folla. Il centro è sicurissimo. 🔒</p>
+                        </div>
+                        <div class="border-l-4 border-gray-300 pl-3">
+                            <h4 class="font-medium mb-1">Parlano inglese?</h4>
+                            <p class="text-sm text-gray-600">Nei luoghi turistici sì. Impara: "Hola" (ciao), "Gracias" (grazie), "¡Feliz Año Nuevo!" (Buon Anno). Gli spagnoli apprezzano molto! 🗣️</p>
+                        </div>
+                    </div>
+                `
+            },
+            'info-utili': {
+                title: '📋 Info Utili',
+                content: `
+                    <div class="space-y-3 max-h-[70vh] overflow-y-auto">
+                        <div class="bg-blue-50 border-l-4 border-blue-400 p-3 rounded-lg">
+                            <h4 class="font-medium text-gray-800 mb-2">✈️ Come Raggiungere il Centro dall'Aeroporto</h4>
+                            <p class="text-sm text-gray-700 mb-2">Madrid-Barajas (MAD) dista circa 12-15 km dal centro. Ecco tutte le opzioni per arrivare in città:</p>
+                        </div>
+
+                        <div class="bg-white border-l-4 border-green-400 p-3 rounded-lg">
+                            <h4 class="font-medium text-gray-800 mb-2 flex items-center">
+                                <span class="text-xl mr-2">🚇</span>
+                                METRO (Linea 8) - La più economica
+                            </h4>
+                            <div class="space-y-2 text-sm text-gray-700">
+                                <div class="bg-gray-50 p-2 rounded">
+                                    <p class="font-medium text-gray-800 mb-1">💰 Costo:</p>
+                                    <p class="text-xs">• Biglietto singolo: 1,50-2€ + supplemento aeroporto 3€ = <strong>4,50-5€ totale</strong></p>
+                                    <p class="text-xs">• 10 biglietti: consigliato acquistare in aeroporto per tutto il weekend</p>
+                                </div>
+                                <div class="bg-gray-50 p-2 rounded">
+                                    <p class="font-medium text-gray-800 mb-1">⏱️ Tempo di percorrenza:</p>
+                                    <p class="text-xs">• Fino a <strong>Nuevos Ministerios</strong> (cambio): circa 15 minuti</p>
+                                    <p class="text-xs">• Fino al <strong>centro</strong> (Puerta del Sol, Gran Vía): 25-35 minuti totali</p>
+                                </div>
+                                <div class="bg-gray-50 p-2 rounded">
+                                    <p class="font-medium text-gray-800 mb-1">📍 Come funziona:</p>
+                                    <p class="text-xs">1. Prendi la <strong>Linea 8 (Rosa)</strong> dall'aeroporto (Terminal T2 o T4)</p>
+                                    <p class="text-xs">2. Scendi a <strong>Nuevos Ministerios</strong></p>
+                                    <p class="text-xs">3. Cambia con Linea 10 per Plaza de España / Tribunal</p>
+                                    <p class="text-xs">4. Oppure cambia con Linea 6 per Cuatro Caminos / Avenida América</p>
+                                </div>
+                                <div class="bg-gray-50 p-2 rounded">
+                                    <p class="font-medium text-gray-800 mb-1">⏰ Orari:</p>
+                                    <p class="text-xs">• Tutti i giorni: 6:00 - 01:30</p>
+                                    <p class="text-xs text-green-600">• <strong>Capodanno (notte 31 dic - 1 gen): APERTA TUTTA LA NOTTE GRATIS!</strong></p>
+                                </div>
+                                <div class="bg-green-50 border border-green-200 p-2 rounded">
+                                    <p class="text-xs">✅ <strong>Pro:</strong> Economica, frequente (ogni 5-7 min), diretta</p>
+                                    <p class="text-xs">❌ <strong>Contro:</strong> Può essere affollata con bagagli, necessario cambio</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white border-l-4 border-yellow-400 p-3 rounded-lg">
+                            <h4 class="font-medium text-gray-800 mb-2 flex items-center">
+                                <span class="text-xl mr-2">🚌</span>
+                                EXPRESS AIRPORT BUS - Comodità e risparmio
+                            </h4>
+                            <div class="space-y-2 text-sm text-gray-700">
+                                <div class="bg-gray-50 p-2 rounded">
+                                    <p class="font-medium text-gray-800 mb-1">💰 Costo:</p>
+                                    <p class="text-xs"><strong>5€</strong> (si paga a bordo al conducente, anche con carta)</p>
+                                </div>
+                                <div class="bg-gray-50 p-2 rounded">
+                                    <p class="font-medium text-gray-800 mb-1">⏱️ Tempo di percorrenza:</p>
+                                    <p class="text-xs">• 40 minuti circa (dipende dal traffico)</p>
+                                </div>
+                                <div class="bg-gray-50 p-2 rounded">
+                                    <p class="font-medium text-gray-800 mb-1">📍 Fermate principali:</p>
+                                    <p class="text-xs">1. <strong>Aeroporto T4</strong> → T2 → T1</p>
+                                    <p class="text-xs">2. <strong>O'Donnell</strong></p>
+                                    <p class="text-xs">3. <strong>Plaza de Cibeles</strong> (centro, vicino al Parco del Retiro)</p>
+                                    <p class="text-xs">4. <strong>Atocha</strong> (stazione ferroviaria principale)</p>
+                                </div>
+                                <div class="bg-gray-50 p-2 rounded">
+                                    <p class="font-medium text-gray-800 mb-1">⏰ Orari:</p>
+                                    <p class="text-xs">• 24 ore su 24, 365 giorni l'anno</p>
+                                    <p class="text-xs">• Frequenza: ogni 15-20 minuti (giorno), ogni 35 minuti (notte)</p>
+                                </div>
+                                <div class="bg-yellow-50 border border-yellow-200 p-2 rounded">
+                                    <p class="text-xs">✅ <strong>Pro:</strong> Diretto, economico, bagagli comodi, 24/7, ferma a Cibeles e Atocha</p>
+                                    <p class="text-xs">❌ <strong>Contro:</strong> Più lento per traffico, meno frequente di notte</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white border-l-4 border-orange-400 p-3 rounded-lg">
+                            <h4 class="font-medium text-gray-800 mb-2 flex items-center">
+                                <span class="text-xl mr-2">🚕</span>
+                                TAXI - Velocità e comfort
+                            </h4>
+                            <div class="space-y-2 text-sm text-gray-700">
+                                <div class="bg-gray-50 p-2 rounded">
+                                    <p class="font-medium text-gray-800 mb-1">💰 Costo:</p>
+                                    <p class="text-xs"><strong>Tariffa fissa: 30€</strong> dall'aeroporto al centro (dentro M-30)</p>
+                                    <p class="text-xs">• Include supplementi aeroporto e bagagli</p>
+                                    <p class="text-xs">• Valido per qualsiasi indirizzo dentro la M-30 (tangenziale)</p>
+                                </div>
+                                <div class="bg-gray-50 p-2 rounded">
+                                    <p class="font-medium text-gray-800 mb-1">⏱️ Tempo di percorrenza:</p>
+                                    <p class="text-xs">• 20-30 minuti (dipende da traffico e destinazione)</p>
+                                </div>
+                                <div class="bg-gray-50 p-2 rounded">
+                                    <p class="font-medium text-gray-800 mb-1">📍 Come funziona:</p>
+                                    <p class="text-xs">• Fila taxi all'uscita di ogni terminal (ben segnalata)</p>
+                                    <p class="text-xs">• Taxi ufficiali: <strong>bianchi con striscia diagonale rossa</strong></p>
+                                    <p class="text-xs">• Accettano carte di credito (chiedi prima di salire)</p>
+                                    <p class="text-xs">• Fino a 4 passeggeri + bagagli</p>
+                                </div>
+                                <div class="bg-orange-50 border border-orange-200 p-2 rounded">
+                                    <p class="text-xs">✅ <strong>Pro:</strong> Veloce, diretto porta a porta, comodo con bagagli, tariffa fissa</p>
+                                    <p class="text-xs">❌ <strong>Contro:</strong> Più costoso, può esserci coda all'aeroporto</p>
+                                </div>
+                                <div class="bg-red-50 border border-red-300 p-2 rounded">
+                                    <p class="text-xs">⚠️ <strong>ATTENZIONE:</strong> Evita taxi non ufficiali che ti avvicinano in aeroporto!</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white border-l-4 border-purple-400 p-3 rounded-lg">
+                            <h4 class="font-medium text-gray-800 mb-2 flex items-center">
+                                <span class="text-xl mr-2">🚗</span>
+                                UBER / CABIFY - App ride-hailing
+                            </h4>
+                            <div class="space-y-2 text-sm text-gray-700">
+                                <div class="bg-gray-50 p-2 rounded">
+                                    <p class="font-medium text-gray-800 mb-1">💰 Costo:</p>
+                                    <p class="text-xs">• <strong>Uber:</strong> 25-40€ (dipende da tipo di servizio e domanda)</p>
+                                    <p class="text-xs">• <strong>Cabify:</strong> 25-35€ (simile a Uber)</p>
+                                    <p class="text-xs">• Prezzi dinamici: possono aumentare nelle ore di punta</p>
+                                </div>
+                                <div class="bg-gray-50 p-2 rounded">
+                                    <p class="font-medium text-gray-800 mb-1">⏱️ Tempo di percorrenza:</p>
+                                    <p class="text-xs">• 20-30 minuti + tempo di attesa del driver (5-10 min)</p>
+                                </div>
+                                <div class="bg-gray-50 p-2 rounded">
+                                    <p class="font-medium text-gray-800 mb-1">📍 Come funziona:</p>
+                                    <p class="text-xs">1. Scarica app <strong>Uber</strong> o <strong>Cabify</strong> prima di partire</p>
+                                    <p class="text-xs">2. Collega carta di credito/PayPal all'app</p>
+                                    <p class="text-xs">3. Richiedi corsa dall'aeroporto (punto di ritiro indicato dall'app)</p>
+                                    <p class="text-xs">4. Pagamento automatico tramite app (no contanti)</p>
+                                </div>
+                                <div class="bg-purple-50 border border-purple-200 p-2 rounded">
+                                    <p class="text-xs">✅ <strong>Pro:</strong> Prezzo visibile prima, comodo, tracciabile, pagamento cashless</p>
+                                    <p class="text-xs">❌ <strong>Contro:</strong> Surge pricing, necessita connessione internet, attesa driver</p>
+                                </div>
+                                <div class="bg-blue-50 border border-blue-200 p-2 rounded">
+                                    <p class="text-xs">💡 <strong>Consiglio:</strong> Confronta prezzi tra Uber, Cabify e taxi (30€ fisso) prima di scegliere!</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-gradient-to-r from-blue-50 to-green-50 p-3 rounded-lg">
+                            <h4 class="font-medium text-gray-800 mb-2">💡 Consigli Generali</h4>
+                            <ul class="text-sm space-y-1 text-gray-700">
+                                <li>✅ <strong>Opzione migliore qualità/prezzo:</strong> Express Airport Bus (5€, comodo, diretto)</li>
+                                <li>✅ <strong>Opzione più economica:</strong> Metro Linea 8 (circa 5€)</li>
+                                <li>✅ <strong>Opzione più veloce/comoda:</strong> Taxi (30€ fisso, max 4 persone)</li>
+                                <li>✅ <strong>Se arrivi in gruppo (3-4 persone):</strong> Taxi o Uber conviene (dividi 30€)</li>
+                                <li>✅ <strong>Se hai molti bagagli:</strong> Bus Express o Taxi</li>
+                                <li>✅ <strong>Arrivi di notte tardi:</strong> Taxi o Uber (metro chiude all'1:30)</li>
+                                <li>⚠️ <strong>WiFi in aeroporto:</strong> Gratuito, usa per chiamare Uber/Cabify</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-gray-50 p-3 rounded-lg">
+                            <h4 class="font-medium text-gray-800 mb-2">📞 Contatti Coordinatrice</h4>
+                            <div class="space-y-2 text-sm">
+                                <div class="flex items-center">
+                                    <span class="text-gray-400 mr-2">✉️</span>
+                                    <a href="mailto:cocosabrina.wr@gmail.com" class="text-blue-600 hover:underline">cocosabrina.wr@gmail.com</a>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="text-gray-400 mr-2">📱</span>
+                                    <a href="tel:+393477257071" class="text-blue-600 hover:underline">+39 347 725 7071</a>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="text-gray-400 mr-2">📸</span>
+                                    <a href="https://instagram.com/awild_coco" target="_blank" rel="noopener noreferrer" class="text-pink-600 hover:underline">@awild_coco</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `
+            },
+            'weroad': {
+                title: '🌍 Info WeRoad',
+                content: `
+                    <div class="space-y-3">
+                        <div class="bg-gray-50 p-3 rounded-lg">
+                            <h4 class="font-medium text-gray-800 mb-2">✨ Prima volta con WeRoad?</h4>
+                            <p class="text-sm text-gray-700 mb-3">Allora ti sarà utile sapere come funziona e cosa aspettarti:</p>
+                            <p class="text-sm text-gray-700 mb-3">Da queste parti ci piace conoscere il luogo, ma anche la gente che ci accompagna, che darà un sapore particolare e unico all'itinerario: ogni viaggio è diverso, ma anche ogni gruppo lo è! 🌍🎉 Anche il coordinatore è uno di voi, un compagno di viaggio. Ben lontano dall'essere una guida a Madrid, sono tanto gasata quanto voi, con la differenza che WeRoad mi fornisce tutti gli strumenti per farvi passare un weekend indimenticabile e al tempo stesso farvi dimenticare di tutto il resto. 🎊</p>
+                            <p class="text-sm text-gray-700"><strong>Questo è lo spirito WeRoad, ma se hai ancora domande... sai dove trovarmi! 😊📞</strong></p>
+                        </div>
+
+                        <div class="bg-gray-50 p-3 rounded-lg">
+                            <h4 class="font-medium text-gray-800 mb-2">💫 I Valori WeRoad</h4>
+                            <ul class="text-sm space-y-2 text-gray-600">
+                                <li class="flex items-start">
+                                    <span class="text-orange-500 mr-2">🌱</span>
+                                    <span><strong>Viaggi autentici e sostenibili</strong></span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-orange-500 mr-2">👥</span>
+                                    <span><strong>Gruppi piccoli</strong> (max 15 persone + 1 coordinatore)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-orange-500 mr-2">🌍</span>
+                                    <span><strong>Esperienze locali genuine</strong></span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-orange-500 mr-2">❤️</span>
+                                    <span><strong>Community di viaggiatori appassionati</strong></span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-gray-50 p-3 rounded-lg">
+                            <h4 class="font-medium text-gray-800 mb-2">🎉 Madrid Capodanno Edition</h4>
+                            <p class="text-sm text-gray-700 mb-3">Un Capodanno indimenticabile nella capitale spagnola! 🎊 Arte, tapas, flamenco e i 12 rintocchi più famosi del mondo in Puerta del Sol! 🍇🎊</p>
+                        </div>
+
+                        <div class="bg-gray-50 p-3 rounded-lg">
+                            <h4 class="font-medium text-gray-800 mb-2">✨ Highlights</h4>
+                            <ul class="text-sm space-y-1 text-gray-600">
+                                <li>🎉 Capodanno in Puerta del Sol con i 12 chicchi d'uva</li>
+                                <li>🖼️ Museo del Prado - capolavori di Velázquez e Goya</li>
+                                <li>🏰 Palazzo Reale di Madrid</li>
+                                <li>🍫 Churros con chocolate da San Ginés</li>
+                                <li>🍷 Tour delle tapas nei quartieri tipici</li>
+                                <li>🌳 Parque del Retiro e Palacio de Cristal</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-gray-50 p-3 rounded-lg">
+                            <h4 class="font-medium text-gray-800 mb-2">🎯 Esperienze</h4>
+                            <ul class="text-sm space-y-1 text-gray-600">
+                                <li>🍽️ Tapas e cucina madrilena autentica</li>
+                                <li>🎨 Arte e cultura spagnola</li>
+                                <li>🛍️ Shopping sulla Gran Via</li>
+                                <li>💃 Vita notturna e festa fino all'alba</li>
+                                <li>🍇 Tradizioni spagnole di Capodanno</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-gray-50 p-3 rounded-lg">
+                            <h4 class="font-medium text-gray-800 mb-2">👩 La Vostra Coordinatrice</h4>
+                            <div class="bg-white p-3 rounded-lg">
+                                <div class="flex items-center mb-3">
+                                    <div class="bg-orange-100 rounded-full p-2 mr-3">
+                                        <span class="text-lg">👩</span>
+                                    </div>
+                                    <div>
+                                        <p class="font-medium text-gray-800">Sabrina</p>
+                                        <p class="text-xs text-gray-500">Coordinatrice WeRoad</p>
+                                    </div>
+                                </div>
+                                <div class="space-y-2 text-sm">
+                                    <div class="flex items-center">
+                                        <span class="text-gray-400 mr-2">✉️</span>
+                                        <a href="mailto:cocosabrina.wr@gmail.com" class="text-blue-600 hover:underline">cocosabrina.wr@gmail.com</a>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <span class="text-gray-400 mr-2">✉️</span>
+                                        <a href="mailto:sabrina_coco@hotmail.it" class="text-blue-600 hover:underline">sabrina_coco@hotmail.it</a>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <span class="text-gray-400 mr-2">📱</span>
+                                        <a href="tel:+393477257071" class="text-blue-600 hover:underline">+39 347 725 7071</a>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <span class="text-gray-400 mr-2">📸</span>
+                                        <a href="https://instagram.com/awild_coco" target="_blank" rel="noopener noreferrer" class="text-pink-600 hover:underline">@awild_coco</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-gradient-to-r from-orange-50 to-red-50 p-3 rounded-lg text-center">
+                            <p class="text-sm text-gray-700 mb-2">🎊 <strong>Ready to WeRoad?</strong></p>
+                            <p class="text-xs text-gray-600">Preparatevi a vivere un weekend che ricorderete per sempre!</p>
+                        </div>
+                    </div>
+                `
+            }
+        };
+
+        function openSection(sectionId) {
+            const section = sections[sectionId];
+            if (section) {
+                document.getElementById('modal-title').innerHTML = section.title;
+                document.getElementById('modal-content').innerHTML = section.content;
+                document.getElementById('modal').classList.remove('hidden');
+                document.getElementById('modal').classList.add('flex');
+            }
+        }
+
+        function closeModal() {
+            document.getElementById('modal').classList.add('hidden');
+            document.getElementById('modal').classList.remove('flex');
+        }
+
+        document.getElementById('modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        function openCanvaDetails() {
+            document.getElementById('canva-modal').classList.remove('hidden');
+            document.getElementById('canva-modal').classList.add('flex');
+        }
+
+        function closeCanvaModal() {
+            document.getElementById('canva-modal').classList.add('hidden');
+            document.getElementById('canva-modal').classList.remove('flex');
+        }
+
+        document.getElementById('canva-modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeCanvaModal();
+            }
+        });
+    </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9a93b61e753aea3c',t:'MTc2NDkzOTQ2OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
