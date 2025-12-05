@@ -196,61 +196,8 @@
       </div>
      </div>
     </div>
-   </div><!-- Mappa Google Maps -->
-   <div class="mb-6 max-w-4xl mx-auto">
-    <div class="h-64 md:h-80 rounded-lg overflow-hidden shadow-sm"><iframe src="https://www.google.com/maps/d/u/2/embed?mid=18TKOKv39aRHS0WhEHWDU6El-zeM4_Qk&amp;ehbc=2E312F" width="100%" height="100%" style="border:0;" allowfullscreen loading="lazy"> </iframe>
-    </div>
-   </div><!-- Link Utili -->
-   <div class="mb-6">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-3 max-w-4xl mx-auto"><a href="https://www.esmadrid.com" target="_blank" rel="noopener noreferrer" class="card-minimal rounded-lg p-4">
-      <div class="flex items-center"><span class="text-2xl mr-3">🏛️</span>
-       <div>
-        <h4 class="font-medium text-gray-700 text-sm">ESMADRID</h4>
-        <p class="text-xs text-gray-500">Turismo ufficiale</p>
-       </div>
-      </div></a> <a href="https://www.weroad.it/viaggi/madrid-weekend-weroadx" target="_blank" rel="noopener noreferrer" class="card-minimal rounded-lg p-4">
-      <div class="flex items-center"><span class="text-2xl mr-3">🌍</span>
-       <div>
-        <h4 class="font-medium text-gray-700 text-sm">WEROAD</h4>
-        <p class="text-xs text-gray-500">Il nostro tour</p>
-       </div>
-      </div></a> <a href="https://consmadrid.esteri.it" target="_blank" rel="noopener noreferrer" class="card-minimal rounded-lg p-4">
-      <div class="flex items-center"><span class="text-2xl mr-3">🇮🇹</span>
-       <div>
-        <h4 class="font-medium text-gray-700 text-sm">CONSOLATO</h4>
-        <p class="text-xs text-gray-500">Consolato Italia</p>
-       </div>
-      </div></a>
-    </div>
    </div>
-  </div><!-- Modal per le sezioni -->
-  <div id="modal" class="fixed inset-0 bg-black/50 hidden items-center justify-center z-50 p-4">
-   <div class="card-minimal rounded-lg max-w-2xl w-full max-h-[90%] overflow-hidden">
-    <div class="p-4">
-     <div class="flex justify-between items-center mb-4">
-      <h2 id="modal-title" class="text-lg font-semibold text-gray-900"></h2><button onclick="closeModal()" class="text-gray-400 hover:text-gray-600 text-2xl">×</button>
-     </div>
-     <div id="modal-content" class="text-gray-600 overflow-y-auto max-h-[70vh] text-sm"><!-- Il contenuto verrà inserito qui -->
-     </div>
-    </div>
-   </div>
-  </div><!-- Modal per Canva Dettagli Cassa Comune -->
-  <div id="canva-modal" class="fixed inset-0 bg-black/50 hidden items-center justify-center z-50 p-4">
-   <div class="card-minimal rounded-lg max-w-3xl w-full max-h-[90%] overflow-hidden">
-    <div class="p-4">
-     <div class="flex justify-between items-center mb-4">
-      <h2 class="text-lg font-semibold text-gray-900">📊 Dettagli Cassa Comune Madrid</h2><button onclick="closeCanvaModal()" class="text-gray-400 hover:text-gray-600 text-2xl">×</button>
-     </div>
-     <div class="overflow-y-auto max-h-[75vh]">
-      <div style="position: relative; width: 100%; height: 0; padding-top: 100.0000%; padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-bottom: 0.9em; overflow: hidden; border-radius: 8px; will-change: transform;"><iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0; margin: 0;" src="https://www.canva.com/design/DAG5CNBegwA/nTzhWr5WpEfthx7V-Blv6A/view?embed" allowfullscreen allow="fullscreen"> </iframe>
-      </div>
-      <div class="text-center text-xs text-gray-600"><a href="https://www.canva.com/design/DAG5CNBegwA/nTzhWr5WpEfthx7V-Blv6A/view?utm_content=DAG5CNBegwA&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener" class="text-blue-600 hover:underline"> Cassa Comune Madrid - Dettaglio </a> di Sabrina Coco
-      </div>
-     </div>
-    </div>
-   </div>
-  </div>
-  <script>
+   <script>
         // Weather API
         async function loadWeather() {
             try {
@@ -323,6 +270,71 @@
         // Load weather on page load
         loadWeather();
 
+<!-- Mappa Google My Maps -->
+<div class="mb-6 max-w-4xl mx-auto">
+  <!-- Contenitore che ritaglia l'iframe -->
+  <div class="h-64 md:h-80 rounded-lg overflow-hidden shadow-sm relative">
+    <iframe
+      src="https://www.google.com/maps/d/u/2/embed?mid=18TKOKv39aRHS0WhEHWDU6El-zeM4_Qk&ehbc=2E312F"
+      width="100%"
+      height="120%"   <!-- altezza maggiore per poter “tagliare” -->
+      style="border:0; position:relative; top:-56px;" <!-- sposta in su -->
+      allowfullscreen
+      loading="lazy">
+    </iframe>
+  </div>
+</div>
+<!-- Link Utili -->
+   <div class="mb-6">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-3 max-w-4xl mx-auto"><a href="https://www.esmadrid.com" target="_blank" rel="noopener noreferrer" class="card-minimal rounded-lg p-4">
+      <div class="flex items-center"><span class="text-2xl mr-3">🏛️</span>
+       <div>
+        <h4 class="font-medium text-gray-700 text-sm">ESMADRID</h4>
+        <p class="text-xs text-gray-500">Turismo ufficiale</p>
+       </div>
+      </div></a> <a href="https://www.weroad.it/viaggi/madrid-weekend-weroadx" target="_blank" rel="noopener noreferrer" class="card-minimal rounded-lg p-4">
+      <div class="flex items-center"><span class="text-2xl mr-3">🌍</span>
+       <div>
+        <h4 class="font-medium text-gray-700 text-sm">WEROAD</h4>
+        <p class="text-xs text-gray-500">Il nostro tour</p>
+       </div>
+      </div></a> <a href="https://consmadrid.esteri.it" target="_blank" rel="noopener noreferrer" class="card-minimal rounded-lg p-4">
+      <div class="flex items-center"><span class="text-2xl mr-3">🇮🇹</span>
+       <div>
+        <h4 class="font-medium text-gray-700 text-sm">CONSOLATO</h4>
+        <p class="text-xs text-gray-500">Consolato Italia</p>
+       </div>
+      </div></a>
+    </div>
+   </div>
+  </div><!-- Modal per le sezioni -->
+  <div id="modal" class="fixed inset-0 bg-black/50 hidden items-center justify-center z-50 p-4">
+   <div class="card-minimal rounded-lg max-w-2xl w-full max-h-[90%] overflow-hidden">
+    <div class="p-4">
+     <div class="flex justify-between items-center mb-4">
+      <h2 id="modal-title" class="text-lg font-semibold text-gray-900"></h2><button onclick="closeModal()" class="text-gray-400 hover:text-gray-600 text-2xl">×</button>
+     </div>
+     <div id="modal-content" class="text-gray-600 overflow-y-auto max-h-[70vh] text-sm"><!-- Il contenuto verrà inserito qui -->
+     </div>
+    </div>
+   </div>
+  </div><!-- Modal per Canva Dettagli Cassa Comune -->
+  <div id="canva-modal" class="fixed inset-0 bg-black/50 hidden items-center justify-center z-50 p-4">
+   <div class="card-minimal rounded-lg max-w-3xl w-full max-h-[90%] overflow-hidden">
+    <div class="p-4">
+     <div class="flex justify-between items-center mb-4">
+      <h2 class="text-lg font-semibold text-gray-900">📊 Dettagli Cassa Comune Madrid</h2><button onclick="closeCanvaModal()" class="text-gray-400 hover:text-gray-600 text-2xl">×</button>
+     </div>
+     <div class="overflow-y-auto max-h-[75vh]">
+      <div style="position: relative; width: 100%; height: 0; padding-top: 100.0000%; padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-bottom: 0.9em; overflow: hidden; border-radius: 8px; will-change: transform;"><iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0; margin: 0;" src="https://www.canva.com/design/DAG5CNBegwA/nTzhWr5WpEfthx7V-Blv6A/view?embed" allowfullscreen allow="fullscreen"> </iframe>
+      </div>
+      <div class="text-center text-xs text-gray-600"><a href="https://www.canva.com/design/DAG5CNBegwA/nTzhWr5WpEfthx7V-Blv6A/view?utm_content=DAG5CNBegwA&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener" class="text-blue-600 hover:underline"> Cassa Comune Madrid - Dettaglio </a> di Sabrina Coco
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  
         // Countdown Timer
         function updateCountdown() {
             const targetDate = new Date('2025-12-30T15:00:00').getTime();
